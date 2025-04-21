@@ -3,6 +3,7 @@
 A modern e-commerce platform built with Next.js, featuring a product catalog, shopping cart, checkout process, and user account management.
 
 ## Project Structure
+```
 ├── app/                       # Next.js App Router
 │   ├── api/                   # API routes
 │   ├── (auth)/                # Authentication pages (grouped route)
@@ -31,3 +32,4 @@ A modern e-commerce platform built with Next.js, featuring a product catalog, sh
 ├── styles/                    # Global styles and themes
 ├── public/                    # Static assets
 └── config/                    # Configuration files
+```
