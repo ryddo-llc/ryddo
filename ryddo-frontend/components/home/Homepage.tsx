@@ -1,5 +1,17 @@
 import React from 'react';
+import HeroSection from './HeroSection';
+import CategoryShowcase from './CategoryShowcase';
+import PopularProducts from './PopularProducts';
+import NewsletterCTA from './NewsletterCTA';
 
 export default function Homepage() {
-  return <div>Home Page</div>;
+  return (
+    <div>
+      Home Page
+      <HeroSection />
+      <CategoryShowcase />
+      <PopularProducts />
+      <NewsletterCTA />
+    </div>
+  );
 }
