@@ -9,31 +9,31 @@ export default function HeaderNavigation() {
   const navigationLinks = [
     {
       name: 'home',
-      path: '',
+      path: '/',
     },
     {
       name: 'e-bikes',
-      path: '',
+      path: '/products',
     },
     {
       name: 'e-scooters',
-      path: '',
+      path: '/products',
     },
     {
       name: 'gear',
-      path: '',
+      path: '/products',
     },
     {
       name: 'accessories',
-      path: '',
+      path: '/products',
     },
     {
       name: 'service',
-      path: '',
+      path: '/service',
     },
   ];
   return (
-    <div className='flex gap-4'>
+    <div className='flex gap-8'>
       {navigationLinks.map((link) => (
         <Link
           key={link.name}
