@@ -40,7 +40,7 @@ export default function PartnersContactBar() {
       </div>
 
       <div className='flex w-full md:w-auto'>
-        <div className='h-16 flex items-center justify-center border-l border-[#FFFFFF] w-1/2 md:w-60 hover:bg-[#F92F7B] hover:text-black'>
+        <div className='h-16 flex items-center justify-center border-l border-r border-r-transparent hover:border-r-black border-l-[#FFFFFF] w-1/2 md:w-60 hover:bg-[#F92F7B]'>
           <Link href='/'>323.676.7433</Link>
         </div>
 
