@@ -8,8 +8,8 @@ import Copyright from './Copyright';
 
 export default function Footer() {
   return (
-    <footer className='bg-[#FFFFFF] flex flex-col justify-center items-center text-black text-sm'>
-      <div className='flex gap-40 p-6'>
+    <footer className='bg-[#FFFFFF] flex flex-col justify-center items-center text-black text-xs'>
+      <div className='flex gap-40 pl-32 pr-32'>
         <InfoSection />
         <ShopLinks />
         <ExploreLinks />
