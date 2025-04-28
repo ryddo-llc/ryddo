@@ -10,20 +10,20 @@ export default function Footer() {
   return (
     <>
       <footer
-        className='bg-[#FFFFFF] flex flex-col justify-center items-center text-black text-xs'
+        className='bg-white w-full text-black text-xs'
         role='contentinfo'
         aria-label='Site Footer'
       >
-        <nav
-          className='flex gap-40 pl-32 pr-32 border-b border-b-gray-300 pb-12'
-          aria-label='Footer Navigation'
-        >
-          <InfoSection />
-          <ShopLinks />
-          <ExploreLinks />
-          <ContactSection />
+        <nav className='max-w-7xl mx-auto px-6 py-12 border-b border-gray-300'>
+          <div className='grid grid-cols-4 gap-x-20 pb-12'>
+            <InfoSection />
+            <ShopLinks />
+            <ExploreLinks />
+            <ContactSection />
+          </div>
         </nav>
-        <div>
+
+        <div className='max-w-6xl mx-auto px-8 py-6'>
           <Copyright />
         </div>
       </footer>

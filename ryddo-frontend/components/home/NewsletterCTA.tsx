@@ -1,5 +1,10 @@
 import React from 'react';
+import NewsLetterForm from '../ui/forms/NewsLetterForm';
 
 export default function NewsletterCTA() {
-  return <div>Newsletter</div>;
+  return (
+    <>
+      <NewsLetterForm />
+    </>
+  );
 }
