@@ -22,60 +22,83 @@ export default function ContactSection() {
     },
   ];
   return (
-    <div className='w-full'>
-      <h4 className='text-sm font-semibold mb-4'>Find us</h4>
+    <>
+      <section className='w-full' aria-labelledby='contact-heading'>
+        <h2 id='contact-heading' className='text-sm font-semibold mb-4'>
+          Contact Us
+        </h2>
 
-      <div className='space-y-3'>
-        {/* Phone */}
-        <div className='flex items-center gap-2'>
-          <FaPhone className='text-[#333333]' />
-          <Link
-            href='tel:+13236767433'
-            className='text-[#333333] hover:text-[#F92F7B]'
-          >
-            (323) 676-7433
-          </Link>
-        </div>
+        <div className='space-y-3'>
+          {/* Phone */}
+          <div className='flex items-center gap-2'>
+            <FaPhone className='text-[#333333]' aria-hidden='true' />
+            <Link
+              href='tel:+13236767433'
+              className='text-[#333333] hover:text-[#F92F7B]'
+              title='Call Ryddo'
+            >
+              (323) 676-7433
+            </Link>
+          </div>
 
-        {/* Email */}
-        <div className='flex items-center gap-2'>
-          <FaEnvelope className='text-[#333333]' />
-          <Link
-            href='mailto:info@ryddo.com'
-            className='text-[#333333] hover:text-[#F92F7B]'
-          >
-            info@ryddo.com
-          </Link>
-        </div>
+          {/* Email */}
+          <div className='flex items-center gap-2'>
+            <FaEnvelope className='text-[#333333]' aria-hidden='true' />
+            <Link
+              href='mailto:info@ryddo.com'
+              className='text-[#333333] hover:text-[#F92F7B]'
+              title='Email Ryddo'
+            >
+              info@ryddo.com
+            </Link>
+          </div>
 
-        {/* Address */}
-        <div className='flex items-start gap-2'>
-          <FaMapMarkerAlt className='text-[#333333] mt-1' />
-          <div className='text-[#333333] hover:text-[#F92F7B]'>
-            787 S Alameda St., Unit 120,
-            <br />
-            Los Angeles, CA 90021
+          {/* Address */}
+          <div className='flex items-start gap-2'>
+            <FaMapMarkerAlt
+              className='text-[#333333] mt-1'
+              aria-hidden='true'
+            />
+            <address className='text-[#333333] not-italic'>
+              <Link
+                href='https://maps.google.com/?q=787+S+Alameda+St.,+Unit+120,+Los+Angeles,+CA+90021'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='hover:text-[#F92F7B]'
+                title='View Ryddo location on Google Maps'
+              >
+                787 S Alameda St., Unit 120,
+                <br />
+                Los Angeles, CA 90021
+              </Link>
+            </address>
+          </div>
+
+          {/* Social Media */}
+          <div className='flex gap-4 pt-2 mt-2' aria-label='Social Media Links'>
+            <Link
+              href='https://instagram.com/ryddo'
+              aria-label='Follow Ryddo on Instagram'
+              title='Instagram'
+              className='text-[#333333] hover:text-[#F92F7B]'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <FaInstagram size={22} aria-hidden='true' />
+            </Link>
+            <Link
+              href='https://facebook.com/ryddo'
+              aria-label='Follow Ryddo on Facebook'
+              title='Facebook'
+              className='text-[#333333] hover:text-[#F92F7B]'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <FaFacebook size={22} aria-hidden='true' />
+            </Link>
           </div>
         </div>
-
-        {/* Social Media */}
-        <div className='flex gap-4 pt-2 mt-2'>
-          <Link
-            href='https://instagram.com/ryddo'
-            aria-label='Instagram'
-            className='text-[#333333] hover:text-[#F92F7B]'
-          >
-            <FaInstagram size={22} />
-          </Link>
-          <Link
-            href='https://facebook.com/ryddo'
-            aria-label='Facebook'
-            className='text-[#333333] hover:text-[#F92F7B]'
-          >
-            <FaFacebook size={22} />
-          </Link>
-        </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 }
