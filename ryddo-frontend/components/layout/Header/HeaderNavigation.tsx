@@ -34,11 +34,11 @@ export default function HeaderNavigation() {
   ];
   return (
     <div className='flex gap-8'>
-      {navigationLinks.map((link) => (
+      {navigationLinks.map((link: navigationLinksProps) => (
         <Link
           key={link.name}
           href={link.path}
-          className='text-black font-extrabold'
+          className='text-black font-extrabold hover:underline hover:decoration-[#F92F7B] hover:underline-offset-6 hover:decoration-2'
         >
           {link.name}
         </Link>

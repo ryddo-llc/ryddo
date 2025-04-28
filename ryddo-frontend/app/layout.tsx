@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import Header from '../components/layout/Header/Header';
 import Footer from '../components/layout/Footer/Footer';
+import PartnersContactBar from '../components/layout/Footer/PartnersContactBar';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -26,6 +27,7 @@ export default function RootLayout({
           <Header />
           <main className='flex grow'>{children}</main>
           <Footer />
+          <PartnersContactBar />
         </div>
       </body>
     </html>
