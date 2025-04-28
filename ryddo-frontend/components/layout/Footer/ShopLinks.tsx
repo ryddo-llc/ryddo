@@ -29,7 +29,11 @@ export default function ShopLinks() {
       <h3 className='text-sm font-semibold mb-4'>Shop</h3>
       <div className='flex flex-col space-y-3'>
         {shopLinks.map((shop: ShopLinksProps) => (
-          <Link className='text-[#333333]' key={shop.name} href={shop.link}>
+          <Link
+            className='text-[#333333] hover:text-[#F92F7B]'
+            key={shop.name}
+            href={shop.link}
+          >
             {shop.name}
           </Link>
         ))}

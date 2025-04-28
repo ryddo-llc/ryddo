@@ -29,7 +29,7 @@ export default function ExploreLinks() {
       <div className='flex flex-col space-y-3'>
         {exploreLinks.map((exploreLink: ExploreLinksProps) => (
           <Link
-            className='text-[#333333]'
+            className='text-[#333333] hover:text-[#F92F7B]'
             key={exploreLink.name}
             href={exploreLink.link}
           >
