@@ -38,17 +38,7 @@ export default function NewsLetterForm() {
   };
 
   return (
-    <div className='rounded-lg bg-white  py-8 w-full max-w-3xl mx-auto'>
-      <div className='absolute inset-0'></div>
-      <div className='text-center mb-6 '>
-        <h2 className='text-3xl font-bold text-gray-800 mb-2'>
-          Let's stay in touch<span className='text-pink-500'>.</span>
-        </h2>
-        <p className='text-gray-600'>
-          Sign up for our newsletter and receive special offers and discounts.
-        </p>
-      </div>
-
+    <div>
       {isSuccess ? (
         <div className='text-center py-6 text-green-600 font-medium'>
           Thanks for subscribing! We'll be in touch soon.
@@ -57,14 +47,14 @@ export default function NewsLetterForm() {
         <form
           onSubmit={(e) => handleSubmit(e as React.FormEvent<HTMLFormElement>)}
         >
-          <div className='flex flex-col space-y-3 px-8'>
+          <div className='flex flex-col space-y-5 px-8'>
             <div className='flex flex-col justify-center sm:flex-row gap-4'>
               <input
                 type='text'
                 placeholder='name'
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className=' bg-white rounded-md border-gray-200 py-1 px-1 text-gray-700 focus:outline-none focus:ring-2 focus:ring-pink-500'
+                className='w-80 h-11 pl-5 pr-5 relative bg-white rounded-[10px] border-gray-200 py-1 px-1 focus:outline-none focus:ring-2 focus:ring-pink-500 text-neutral-500 text-sm font-semibold'
                 required
               />
               <input
@@ -72,7 +62,9 @@ export default function NewsLetterForm() {
                 placeholder='email'
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className=' bg-white rounded-md border-gray-200 py-1 px-1 text-gray-700 focus:outline-none focus:ring-2 focus:ring-pink-500'
+                className='w-80 h-11 pl-5 pr-5 relative bg-white rounded-[10px] border-gray-200 py-1 px-1 focus:outline-none focus:ring-2 focus:ring-pink-500 text-neutral-500
+text-sm
+font-semibold'
                 required
               />
             </div>
@@ -80,7 +72,7 @@ export default function NewsLetterForm() {
             <button
               type='submit'
               disabled={isSubmitting}
-              className='rounded-md bg-pink-500 hover:bg-pink-600 py-1 px-1 text-center text-white font-medium transition duration-200 ease-in-out'
+              className='rounded-[10px] bg-[#F92F7B] hover:bg-pink-600 py-1 px-1 text-center text-white text-sm font-bold leading-7 tracking-wide transition duration-200 ease-in-out'
             >
               {isSubmitting ? 'Subscribing...' : 'subscribe'}
             </button>
