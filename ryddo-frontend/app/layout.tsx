@@ -34,6 +34,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${nunito.variable} antialiased`}>
         <div className='min-h-screen flex flex-col'>
           <Header />
+
           <main className='flex grow'>{children}</main>
           <NewsletterCTA />
           <Footer />

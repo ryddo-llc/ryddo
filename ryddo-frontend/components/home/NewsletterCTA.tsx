@@ -8,7 +8,7 @@ export default function NewsletterCTA() {
   return (
     <div className='w-full h-[530px] overflow-hidden relative flex items-center'>
       {/* Background Image Container */}
-      <div className='absolute inset-0 w-full h-full'>
+      <div className='absolute inset-0 w-full h-full bg-fixed'>
         <Image
           src={background}
           alt='Palm Trees With Mountains background'
