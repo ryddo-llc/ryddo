@@ -4,6 +4,7 @@ import './globals.css';
 import Header from '../components/layout/Header/Header';
 import Footer from '../components/layout/Footer/Footer';
 import PartnersContactBar from '../components/layout/Footer/PartnersContactBar';
+import NewsletterCTA from '../components/home/NewsletterCTA';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -26,7 +27,9 @@ export default function RootLayout({
         <div className='min-h-screen flex flex-col'>
           <Header />
           <main className='flex grow'>{children}</main>
+          <NewsletterCTA />
           <Footer />
+
           <PartnersContactBar />
         </div>
       </body>
