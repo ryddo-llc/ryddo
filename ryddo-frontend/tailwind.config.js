@@ -7,8 +7,8 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        'ryddo-pink': '#F92F7B',
+      fontFamily: {
+        nunito: ['var(--font-nunito)', ...fontFamily.sans],
       },
     },
   },

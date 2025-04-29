@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import { Nunito } from 'next/font/google';
 import './globals.css';
 import Header from '../components/layout/Header/Header';
 import Footer from '../components/layout/Footer/Footer';
@@ -9,6 +10,13 @@ import NewsletterCTA from '../components/home/NewsletterCTA';
 const inter = Inter({
   variable: '--font-inter',
   subsets: ['latin'],
+});
+
+const nunito = Nunito({
+  subsets: ['latin'],
+  weight: ['400', '700'], // Add all weights you need: '400', '500', '600', etc.
+  variable: '--font-nunito', // Create a CSS variable
+  display: 'swap', // 'swap', 'block', or 'fallback' - 'swap' is good for most cases
 });
 
 export const metadata: Metadata = {
@@ -23,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${inter.variable} antialiased`}>
+      <body className={`${inter.variable} ${nunito.variable} antialiased`}>
         <div className='min-h-screen flex flex-col'>
           <Header />
           <main className='flex grow'>{children}</main>
