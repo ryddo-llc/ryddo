@@ -2,7 +2,7 @@ import React from 'react';
 import HeroSection from './HeroSection';
 import CategoryShowcase from './CategoryShowcase';
 import PopularProducts from './PopularProducts';
-import NewsletterCTA from './NewsletterCTA';
+
 
 export default function Homepage() {
   return (
