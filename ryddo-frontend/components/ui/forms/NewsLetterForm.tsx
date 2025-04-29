@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
-import newletterformbackground from '../../../public/images/backgrounds/newsletterform-background.svg';
-import Image from 'next/image';
+
+
 export default function NewsLetterForm() {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
