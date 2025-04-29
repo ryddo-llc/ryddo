@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+
+const { fontFamily } = require('tailwindcss/defaultTheme');
 module.exports = {
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
@@ -7,8 +9,8 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        'ryddo-pink': '#F92F7B',
+      fontFamily: {
+        nunito: ['var(--font-nunito)', ...fontFamily.sans],
       },
     },
   },

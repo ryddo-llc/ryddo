@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function InfoSection() {
   return (
-    <div className='w-full'>
+    <div>
       <p className='text-sm font-medium mb-2'>
         Cleaning up the air, one EV at a time.
       </p>

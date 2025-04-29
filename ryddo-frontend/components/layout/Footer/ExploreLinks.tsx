@@ -24,7 +24,7 @@ export default function ExploreLinks() {
     },
   ];
   return (
-    <div className='w-full'>
+    <div>
       <h3 className='text-sm font-semibold mb-4'>Explore</h3>
       <div className='flex flex-col space-y-3'>
         {exploreLinks.map((exploreLink: ExploreLinksProps) => (

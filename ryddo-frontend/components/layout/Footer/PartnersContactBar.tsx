@@ -17,7 +17,7 @@ export default function PartnersContactBar() {
     { name: 'MiniMotors', image: minimotors },
   ];
   return (
-    <div className='bg-black flex flex-col md:flex-row text-white items-center font-bold sticky z-51 text-xs'>
+    <div className='bg-black flex flex-col md:flex-row text-white items-center font-bold sticky bottom-0 left-0 right-0 z-50 text-xs'>
       <div className='h-16 flex items-center border-r border-[#FFFFFF] px-10 md:px-18 hover:bg-[#F92F7B]'>
         <Link href='/'>
           Sign up for Free ryddo adventures{' '}
