@@ -4,7 +4,7 @@ import React from 'react';
 type ButtonProps = {
   text?: string;
   link?: string;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: () => void;
   className?: string;
   width?: string;
   height?: string;
@@ -32,6 +32,7 @@ const Button = ({
   return (
     <Link
       href={link}
+      onClick={onClick}
       className={`${width} ${height} ${bgColor} ${rounded} ${shadow} ${textColor} ${fontSize} ${fontWeight} font-['Inter'] tracking-wide flex items-center justify-center ${className} ${
         disabled ? 'opacity-50 cursor-not-allowed' : ''
       }`}
