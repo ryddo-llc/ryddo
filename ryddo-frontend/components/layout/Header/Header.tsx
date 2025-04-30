@@ -5,7 +5,7 @@ import Logo from './Logo';
 import NavIcons from './NavIcons';
 export default function Header() {
   return (
-    <header className='bg-white shadow-md sticky top-0 z-50'>
+    <header className='bg-white shadow-md top-0 z-50'>
       <AnnouncmentBar />
       <div className='flex justify-around items-center'>
         <Logo />
