@@ -14,7 +14,7 @@ const inter = Inter({
 
 const nunito = Nunito({
   subsets: ['latin'],
-  weight: ['400', '700'], // Add all weights you need: '400', '500', '600', etc.
+  weight: ['400', '700', '800', '900'], // Add all weights you need: '400', '500', '600', etc.
   variable: '--font-nunito', // Create a CSS variable
   display: 'swap', // 'swap', 'block', or 'fallback' - 'swap' is good for most cases
 });
@@ -35,7 +35,7 @@ export default function RootLayout({
         <div className='min-h-screen flex flex-col'>
           <Header />
 
-          <main className='flex grow'>{children}</main>
+          <main className='flex'>{children}</main>
           <NewsletterCTA />
           <Footer />
 
