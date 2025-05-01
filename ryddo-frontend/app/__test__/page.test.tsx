@@ -15,4 +15,9 @@ describe('Page', () => {
     render(<Page />);
     expect(screen.getByTestId('mock-homepage')).toBeInTheDocument();
   });
+
+  it('renders homepage unchanged', () => {
+    const { container } = render(<Page />);
+    expect(container).toMatchSnapshot();
+  });
 });
