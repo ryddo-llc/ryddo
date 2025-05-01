@@ -6,11 +6,11 @@ import PaymentOptions from './PaymentOptions';
 
 export default function Homepage() {
   return (
-    <div className='w-full'>
+    <main className='w-full'>
       <HeroSection />
       <CategoryShowcase />
       <PaymentOptions />
       <PopularProducts />
-    </div>
+    </main>
   );
 }
