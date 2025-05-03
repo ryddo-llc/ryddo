@@ -6,7 +6,10 @@ export default function CategoryShowcase() {
   const topRowCategories = categories.slice(0, 3);
   const bottomRowCategories = categories.slice(3, 5);
   return (
-    <section className='w-full py-2 md:py-4 lg:py-6'>
+    <section
+      aria-labelledby='categories'
+      className='w-full py-2 md:py-4 lg:py-6'
+    >
       <div className='max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8'>
         <div className='space-y-6'>
           {/* Top Row - First item 50%, other two 25% each */}
