@@ -16,7 +16,7 @@ export default function CategoryItem({ name, image, link }: CategoryItemProps) {
     extraContent = 'we service all electric rides';
   }
   return (
-    <div className='relative bg-white rounded-lg shadow-md p-6'>
+    <article className='relative bg-white rounded-lg shadow-md p-6'>
       {/* Background Image Container */}
       <div className='absolute inset-0 rounded-lg overflow-hidden'>
         <Image
@@ -31,11 +31,11 @@ export default function CategoryItem({ name, image, link }: CategoryItemProps) {
 
       {/* Grid layout for content */}
       <div
-        className='relative z-10 min-h-[300px] grid'
-        style={{
-          gridTemplateRows: isCentered ? '1fr auto 1fr' : '1fr',
-          alignItems: isCentered ? 'center' : 'start',
-        }}
+        className={`relative z-10 min-h-[300px] grid ${
+          isCentered
+            ? 'grid-rows-[1fr_auto_1fr] items-center'
+            : 'grid-rows-1 items-start'
+        }`}
       >
         <div
           className={`${
@@ -69,6 +69,6 @@ export default function CategoryItem({ name, image, link }: CategoryItemProps) {
           </div>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
