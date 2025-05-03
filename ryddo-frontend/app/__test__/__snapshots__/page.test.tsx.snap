@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Page renders homepage unchanged 1`] = `
+<div>
+  <div
+    data-testid="mock-homepage"
+  >
+    Mocked Homepage
+  </div>
+</div>
+`;

@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 export default function NewsletterCTA() {
   return (
-    <div className='w-full min-h-screen md:min-h-[50vh] overflow-hidden relative flex items-center'>
+    <section className='w-full min-h-screen md:min-h-[50vh] overflow-hidden relative flex items-center'>
       {/* Background Image Container */}
       <div className='absolute inset-0 w-full h-full aspect-video'>
         <Image
@@ -54,6 +54,6 @@ font-bold'
           <NewsLetterForm />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
