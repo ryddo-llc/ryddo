@@ -1,5 +1,5 @@
 import React from 'react';
 
 export default function PopularProducts() {
-  return <div>Popular Products</div>;
+  return <section>Popular Products</section>;
 }
