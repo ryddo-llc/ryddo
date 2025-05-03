@@ -1,10 +1,10 @@
-type CategoriesProps = {
+type CategoriesData = {
   name: string;
   link: string;
   image: string;
 };
 
-export const createCategories = (): CategoriesProps[] => {
+export const createCategories = (): CategoriesData[] => {
   const categoryNames = [
     'e-scooters',
     'e-bikes',
