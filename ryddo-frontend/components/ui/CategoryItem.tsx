@@ -16,7 +16,7 @@ export default function CategoryItem({ name, image, link }: CategoryItemProps) {
     extraContent = 'we service all electric rides';
   }
   return (
-    <article className='relative bg-white rounded-lg shadow-md p-6'>
+    <article className='relative bg-white rounded-lg shadow-md p-6 hover:scale-105 transition-transform'>
       {/* Background Image Container */}
       <div className='absolute inset-0 rounded-lg overflow-hidden'>
         <Image
