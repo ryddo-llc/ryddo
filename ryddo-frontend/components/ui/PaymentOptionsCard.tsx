@@ -1,6 +1,6 @@
 import React from 'react';
 import paymentOptions from '../../lib/utils/paymentOptions';
-import Accordian from './Accordion';
+import Accordion from './Accordion';
 import Image from 'next/image';
 import formBackground from '../../public/images/backgrounds/newsletterform.png';
 export default function PaymentOptionsCard() {
@@ -33,7 +33,7 @@ export default function PaymentOptionsCard() {
             as well as cash discounts
           </p>
 
-          <Accordian items={paymentOptions} />
+          <Accordion items={paymentOptions} />
         </div>
       </div>
     </article>

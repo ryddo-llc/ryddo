@@ -5,7 +5,7 @@ interface AccordionItemProps {
   title: string;
   content: string;
 }
-export default function AccordianItem({ content, title }: AccordionItemProps) {
+export default function AccordionItem({ content, title }: AccordionItemProps) {
   const [isOpen, setOpen] = useState(false);
 
   const onToggle = () => {
