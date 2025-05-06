@@ -1,6 +1,6 @@
 import React from 'react';
 import paymentOptions from '../../lib/utils/paymentOptions';
-import Accordian from './Accordian';
+import Accordian from './Accordion';
 import Image from 'next/image';
 import formBackground from '../../public/images/backgrounds/newsletterform.png';
 export default function PaymentOptionsCard() {
