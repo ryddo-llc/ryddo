@@ -37,6 +37,7 @@ font-bold '
       </button>
 
       <div
+        id={`content-${title.replace(/\s+/g, '-').toLowerCase()}`}
         className={`overflow-hidden relative rounded-[10px] bg-sky-100 transition-all duration-200 ease-in-out ${
           isOpen ? 'max-h-96' : 'max-h-0 '
         }`}

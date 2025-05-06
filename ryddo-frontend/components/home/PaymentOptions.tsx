@@ -8,7 +8,7 @@ import { Parallax } from 'react-scroll-parallax';
 export default function PaymentOptions() {
   return (
     <section
-      aria-labelledby='payment-options'
+      aria-label='Payment Options'
       className='w-full h-[45vh] md:h-[50vh] lg:h-[65vh] relative flex items-center overflow-hidden'
     >
       <Parallax speed={-20} className='absolute inset-0 w-full h-full'>
