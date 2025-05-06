@@ -19,6 +19,8 @@ export default function AccordianItem({ content, title }: AccordionItemProps) {
     >
       <button
         onClick={onToggle}
+        aria-expanded={isOpen}
+        aria-controls={`content-${title.replace(/\s+/g, '-').toLowerCase()}`}
         className='w-full p-4 text-left flex justify-between items-center hover:bg-gray-50 hover:rounded-xl transition-colors leading-normal text-zinc-800
 text-md
 font-bold '
