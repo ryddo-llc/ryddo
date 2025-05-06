@@ -1,11 +1,11 @@
 import React from 'react';
 import { paymentOptions } from '../../app/types/paymentOptions';
 import AccordianItem from './AccordionItem';
-type AccordianProps = {
+type AccordionProps = {
   items: paymentOptions;
 };
 
-export default function Accordian({ items }: AccordianProps) {
+export default function Accordian({ items }: AccordionProps) {
   return (
     <div>
       {items.map((item) => (
