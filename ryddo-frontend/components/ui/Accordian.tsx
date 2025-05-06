@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { paymentOptions } from '../../app/types/paymentOptions';
-import AccordianItem from './AccordianItem';
+import AccordianItem from './AccordionItem';
 type AccordianProps = {
   items: paymentOptions;
 };

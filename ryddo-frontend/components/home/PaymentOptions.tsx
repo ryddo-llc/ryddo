@@ -12,7 +12,7 @@ export default function PaymentOptions() {
       className='w-full h-[45vh] md:h-[50vh] lg:h-[65vh] relative flex items-center overflow-hidden'
     >
       <Parallax speed={-20} className='absolute inset-0 w-full h-full'>
-        <div className='absolute inset-0 w-full h-[120%] top-[-15%]'>
+        <div className='absolute inset-0 w-full h-[120%] top-[-5%]'>
           <Image
             src={formBackground}
             alt='E-Bike with People Riding in the Background'
