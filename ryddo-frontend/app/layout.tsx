@@ -6,6 +6,7 @@ import Header from '../components/layout/Header/Header';
 import Footer from '../components/layout/Footer/Footer';
 import PartnersContactBar from '../components/layout/Footer/PartnersContactBar';
 import NewsletterCTA from '../components/home/NewsletterCTA';
+import { Providers } from './providers/provider';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -32,15 +33,17 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${inter.variable} ${nunito.variable} antialiased`}>
-        <div className='min-h-screen flex flex-col'>
-          <Header />
+        <Providers>
+          <div className='min-h-screen flex flex-col'>
+            <Header />
 
-          <main className='flex'>{children}</main>
-          <NewsletterCTA />
-          <Footer />
+            <main className='flex'>{children}</main>
+            <NewsletterCTA />
+            <Footer />
 
-          <PartnersContactBar />
-        </div>
+            <PartnersContactBar />
+          </div>
+        </Providers>
       </body>
     </html>
   );
