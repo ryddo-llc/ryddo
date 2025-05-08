@@ -15,20 +15,21 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   return (
-    <div key={product.id} className='flex flex-col items-center mb-8'>
+    <div className='flex flex-col items-center mb-8'>
       {/* Product Image */}
-      <div className='bg-gradient-to-b from-blue-100 to-yellow-100 w-full rounded-[10px] overflow-hidden mb-6'>
+      <div className='rounded-[10px] overflow-hidden'>
         <Image
           src={product.image}
           alt={product.name}
           width={300}
           height={300}
-          className='w-full object-contain h-64 p-4'
+          className='w-full h-full object-cover '
+          priority
         />
       </div>
 
       {/* Product Info */}
-      <h3 className='text-center text-zinc-800 text-med font-bold mb-2 leading-none'>
+      <h3 className='text-center text-zinc-800 text-sm font-bold mb-2 pt-2 leading-none'>
         {product.name}
       </h3>
       <div className='text-center mb-4'>
