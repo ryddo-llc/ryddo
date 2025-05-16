@@ -13,23 +13,23 @@ export default function HeaderNavigation() {
     },
     {
       name: 'e-bikes',
-      path: '/products',
+      path: '/products/e-bikes',
     },
     {
       name: 'e-scooters',
-      path: '/products',
+      path: '/products/e-scooters',
     },
     {
       name: 'gear',
-      path: '/products',
+      path: '/products/gear',
     },
     {
       name: 'accessories',
-      path: '/products',
+      path: '/products/accessories',
     },
     {
       name: 'service',
-      path: '/service',
+      path: '/products/service',
     },
   ];
   return (

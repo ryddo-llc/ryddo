@@ -34,10 +34,11 @@ export default function RootLayout({
     <html lang='en'>
       <body className={`${inter.variable} ${nunito.variable} antialiased`}>
         <Providers>
-          <div className='min-h-screen flex flex-col'>
+          <div className='flex flex-col min-h-screen'>
             <Header />
 
-            <main className='flex'>{children}</main>
+            <main className='flex-grow'>{children}</main>
+
             <NewsletterCTA />
             <Footer />
 
