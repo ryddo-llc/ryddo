@@ -1,9 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface ProductCardProps {
   product: {
     id: number;
+    type: string;
     image: string;
     name: string;
     originalPrice?: string;
@@ -15,7 +17,10 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   return (
-    <div className='flex flex-col items-center mb-8'>
+    <Link
+      href={`/prdocucts/${product.type}/${product.id}`}
+      className='flex flex-col items-center mb-8'
+    >
       {/* Product Image */}
       <div className='rounded-[10px] overflow-hidden'>
         <Image
@@ -42,6 +47,6 @@ export default function ProductCard({ product }: ProductCardProps) {
         {product.price && <span>{product.price}</span>}
         {product.priceRange && <span>{product.priceRange}</span>}
       </div>
-    </div>
+    </Link>
   );
 }
