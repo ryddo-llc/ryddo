@@ -19,7 +19,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   return (
     <article className='flex flex-col items-center mb-8'>
       <Link
-        href={`/prdocucts/${product.type}/${product.id}`}
+        href={`/products/${product.type}/${product.id}`}
         title={`View details for ${product.name}`}
       >
         {/* Product Image */}
