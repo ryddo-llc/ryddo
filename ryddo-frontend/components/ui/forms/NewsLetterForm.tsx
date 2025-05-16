@@ -1,7 +1,6 @@
 'use client';
 import React, { useState } from 'react';
 
-
 export default function NewsLetterForm() {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
@@ -13,6 +12,20 @@ export default function NewsLetterForm() {
     e.preventDefault();
     setIsSubmitting(true);
     setError('');
+
+    if (!email.includes('@')) {
+      setError('Please enter a valid email');
+      return;
+    }
+
+    if (!name) {
+      setError('Please Enter Your Name');
+      return;
+    }
+
+    if (!email) {
+      setError('Please Enter An Email');
+    }
 
     try {
       // Replace with your actual API endpoint
@@ -71,13 +84,21 @@ font-semibold'
 
             <button
               type='submit'
+              data-testid='submit-button'
               disabled={isSubmitting}
               className='rounded-[10px] bg-[#F92F7B] hover:bg-pink-600 py-1 px-1 text-center text-white text-sm font-bold leading-7 tracking-wide transition duration-200 ease-in-out'
             >
               {isSubmitting ? 'Subscribing...' : 'subscribe'}
             </button>
 
-            {error && <p className='text-red-500 text-center'>{error}</p>}
+            {error && (
+              <p
+                data-testid='error-message'
+                className='text-red-500 text-center'
+              >
+                {error}
+              </p>
+            )}
           </div>
         </form>
       )}
