@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductGrid from '../product/ProductGrid';
+import ProductGrid from '../product/PopularProductsGrid';
 
 export default function PopularProducts() {
   return (

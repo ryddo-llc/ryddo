@@ -6,6 +6,9 @@ const products = [
     image: '/images/Products/dualtron-thunder.png',
     originalPrice: '$3,800',
     salePrice: '$3,499',
+    onSale: true,
+    new: false,
+    bestSeller: false,
   },
   {
     id: 2,
@@ -13,6 +16,9 @@ const products = [
     type: 'e-bikes',
     image: '/images/Products/super73-rx.png',
     price: '$3,695',
+    onSale: false,
+    new: false,
+    bestSeller: true,
   },
   {
     id: 3,
@@ -20,6 +26,9 @@ const products = [
     type: 'e-bike',
     image: '/images/Products/super73-s1.png',
     price: '$1,995',
+    onSale: false,
+    new: true,
+    bestSeller: false,
   },
   {
     id: 4,
@@ -27,6 +36,9 @@ const products = [
     type: 'e-scooters',
     image: '/images/Products/eagle-pro.png',
     priceRange: '$2,290 - $2,640',
+    onSale: false,
+    new: true,
+    bestSeller: false,
   },
   {
     id: 5,
@@ -34,6 +46,9 @@ const products = [
     type: 'e-bikes',
     image: '/images/Products/super73-z1.png',
     price: '$1,395',
+    onSale: true,
+    new: false,
+    bestSeller: false,
   },
   {
     id: 6,
@@ -41,6 +56,9 @@ const products = [
     type: 'e-bikes',
     image: '/images/Products/super73-s2.png',
     price: '$2,995',
+    onSale: false,
+    new: false,
+    bestSeller: true,
   },
   {
     id: 7,
@@ -48,6 +66,9 @@ const products = [
     type: 'e-bikes',
     image: '/images/Products/super73-r.png',
     price: '$3,295',
+    onSale: true,
+    new: true,
+    bestSeller: false, // This product has both "New" and "Sale" badges
   },
   {
     id: 8,
@@ -55,6 +76,9 @@ const products = [
     type: 'e-bikes',
     image: '/images/Products/adventure-bike.png',
     priceRange: '$6,999 - $7,999',
+    onSale: true,
+    new: false,
+    bestSeller: false, // This product has no special badge
   },
 ];
 
