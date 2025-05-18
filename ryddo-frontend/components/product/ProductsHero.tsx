@@ -18,7 +18,7 @@ export default function ProductsHero() {
           src={`/images/Products/backgrounds/${currentPathname}.jpg`}
           alt='Person riding an electric bicycle on a scenic coastal road'
           fill
-          className='object-cover w-full h-full transition-transform duration-800'
+          className='object-cover w-full h-full'
           priority
         />
       </div>

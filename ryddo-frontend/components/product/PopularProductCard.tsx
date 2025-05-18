@@ -19,7 +19,10 @@ interface ProductCardProps {
   showBadge?: boolean;
 }
 
-export default function ProductCard({ product, showBadge }: ProductCardProps) {
+export default function PopularProductCard({
+  product,
+  showBadge,
+}: ProductCardProps) {
   return (
     <article className='relative flex flex-col items-center mb-8 rounded-[10px] overflow-hidden border border-gray-200'>
       <Link

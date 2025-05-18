@@ -16,56 +16,52 @@ interface ProductCardProps {
     new?: boolean;
     bestSeller?: boolean;
   };
-  showBadge?: boolean;
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
   return (
-    <article className='relative bg-white rounded-[10px] shadow-sm overflow-hidden h-full'>
+    <article className='relative flex flex-col items-center mb-8 rounded-[10px] overflow-hidden border border-gray-200 bg-white w-full max-w-md'>
       <Link
         href={`/products/${product.type}/${product.id}`}
         title={`View details for ${product.name}`}
-        className='block w-full h-full p-4'
+        className='block w-full h-full'
       >
-        {/* Product Badges */}
-        <div className='absolute top-3 left-3 z-10'>
+        <div className='absolute top-5 left-4 z-10'>
           {product.onSale && (
-            <span className='bg-pink-500 text-white text-xs px-2 py-1 rounded-md block mb-1'>
-              Sale
+            <span className='bg-pink-500 text-white text-xs px-4 py-0.5 rounded-md block mb-1'>
+              Sale!
             </span>
           )}
-          {product.new && (
-            <span className='bg-blue-500 text-white text-xs px-2 py-1 rounded-md block mb-1'>
+          {/* {product.new && (
+            <span className='bg-blue-500 text-white text-xs px-2 py-0.5 rounded-md block mb-1'>
               New
             </span>
           )}
           {product.bestSeller && (
-            <span className='bg-yellow-500 text-white text-xs px-2 py-1 rounded-md block mb-1'>
+            <span className='bg-yellow-500 text-white text-xs px-2 py-0.5 rounded-md block mb-1'>
               Best
             </span>
-          )}
+          )} */}
         </div>
-
         {/* Product Image */}
-        <div className='flex justify-center items-center bg-white mb-4'>
+        <div className='w-full px-2'>
           <Image
             src={product.image}
             alt={`${product.name} || 'Product image'}`}
-            width={300}
-            height={300}
-            className='w-full h-[180px] object-contain'
+            width={400}
+            height={400}
+            className='w-full h-[315px] object-contain rounded-[10px]'
             priority
           />
         </div>
-
         {/* Product Info */}
-        <div className='text-center'>
-          <h2 className='text-zinc-800 text-sm font-bold mb-2 leading-none'>
+        <div className='text-center p-3'>
+          <h2 className='text-zinc-800 font-medium text-base'>
             {product.name}
           </h2>
-          <div className='mb-2'>
+          <div>
             {product.originalPrice && (
-              <span className='line-through text-neutral-500 text-base font-semibold mr-2'>
+              <span className='line-through text-neutral-500 text-sm mr-2'>
                 {product.originalPrice}
               </span>
             )}

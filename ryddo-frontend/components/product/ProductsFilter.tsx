@@ -1,6 +1,6 @@
 export default function ProductsFilter() {
   return (
-    <aside className='w-full md:w-[220px] bg-white p-5 rounded-lg shadow-sm'>
+    <aside className='w-full md:w-[220px] h-full bg-white p-5 rounded-lg shadow-sm'>
       <div className='mb-6'>
         <h3 className='font-bold text-lg mb-4'>Let's find you a scooter!</h3>
         <p className='text-sm mb-3'>
@@ -8,13 +8,13 @@ export default function ProductsFilter() {
           tell us all about your ideal new e-scooter and we can make some
           suggestions.
         </p>
-        <div className='flex mt-4 max-w-full overflow-hidden'>
+        <div className='flex mt-4 max-w-full overflow-hidden gap-2'>
           <input
             type='text'
-            placeholder='Search'
+            placeholder='Search...'
             className='flex-1 min-w-0 border border-gray-300 rounded-l-md px-3 py-2 text-sm'
           />
-          <button className='bg-pink-500 text-white px-3 py-2 rounded-r-md flex-shrink-0'>
+          <button className='bg-[#F92F7B] text-white px-3 py-2 rounded-r-md flex-shrink-0'>
             <span>→</span>
           </button>
         </div>
@@ -34,7 +34,11 @@ export default function ProductsFilter() {
             'Mountain (5)',
           ].map((style) => (
             <div key={style} className='flex items-center'>
-              <input type='checkbox' id={style} className='mr-2 h-4 w-4' />
+              <input
+                type='checkbox'
+                id={style}
+                className='mr-2 h-4 w-4 appearance-none border-2 border-[#F92F7B] checked:bg-[#F92F7B] rounded focus:ring-[#F92F7B] focus:ring-opacity-25'
+              />
               <label htmlFor={style} className='text-sm'>
                 {style}
               </label>
@@ -50,7 +54,11 @@ export default function ProductsFilter() {
           {['15 MPH (8)', '20 MPH (27)', '25 MPH (14)', '28+ MPH (12)'].map(
             (range) => (
               <div key={range} className='flex items-center'>
-                <input type='checkbox' id={range} className='mr-2 h-4 w-4' />
+                <input
+                  type='checkbox'
+                  id={range}
+                  className='mr-2 h-4 w-4 appearance-none border-2 border-[#F92F7B] checked:bg-[#F92F7B] rounded focus:ring-[#F92F7B] focus:ring-opacity-25'
+                />
                 <label htmlFor={range} className='text-sm'>
                   {range}
                 </label>
@@ -71,7 +79,11 @@ export default function ProductsFilter() {
             '$5,000 and above (3)',
           ].map((price) => (
             <div key={price} className='flex items-center'>
-              <input type='checkbox' id={price} className='mr-2 h-4 w-4' />
+              <input
+                type='checkbox'
+                id={price}
+                className='mr-2 h-4 w-4 appearance-none border-2 border-[#F92F7B] checked:bg-[#F92F7B] rounded focus:ring-[#F92F7B] focus:ring-opacity-25'
+              />
               <label htmlFor={price} className='text-sm'>
                 {price}
               </label>
