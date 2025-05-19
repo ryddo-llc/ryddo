@@ -1,8 +1,8 @@
 export default function ProductsFilter() {
   return (
-    <aside className='w-full md:w-[220px] h-full bg-white p-5 rounded-lg shadow-sm'>
+    <aside className='w-full md:w-[220px] h-full bg-white p-5 mt-6 rounded-lg shadow-sm'>
       <div className='mb-6'>
-        <h3 className='font-bold text-lg mb-4'>Let's find you a scooter!</h3>
+        <h3 className='font-bold text-lg mb-4'>Let&apos;s find you a scooter!</h3>
         <p className='text-sm mb-3'>
           Welcome back <span className='text-pink-500'>thomas</span>! Please
           tell us all about your ideal new e-scooter and we can make some
