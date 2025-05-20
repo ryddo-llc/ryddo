@@ -1,4 +1,3 @@
-import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -20,7 +19,7 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   return (
-    <article className='relative flex flex-col items-center mb-8 rounded-[10px] overflow-hidden border border-gray-200 bg-white w-full max-w-md'>
+    <article className='relative flex flex-col items-center mb-8 rounded-[10px] overflow-hidden border border-gray-100 bg-white w-full max-w-md'>
       <Link
         href={`/products/${product.type}/${product.id}`}
         title={`View details for ${product.name}`}
@@ -56,9 +55,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         </div>
         {/* Product Info */}
         <div className='text-center p-3'>
-          <h2 className='text-zinc-800 font-medium text-base'>
-            {product.name}
-          </h2>
+          <h2 className='text-zinc-800 text-base font-bold'>{product.name}</h2>
           <div>
             {product.originalPrice && (
               <span className='line-through text-neutral-500 text-sm mr-2'>
@@ -66,13 +63,15 @@ export default function ProductCard({ product }: ProductCardProps) {
               </span>
             )}
             {product.salePrice && (
-              <span className='text-black font-bold'>{product.salePrice}</span>
+              <span className='text-black font-medium'>
+                {product.salePrice}
+              </span>
             )}
             {product.price && (
-              <span className='text-black font-bold'>{product.price}</span>
+              <span className='text-black'>{product.price}</span>
             )}
             {product.priceRange && (
-              <span className='text-black font-bold'>{product.priceRange}</span>
+              <span className='text-black'>{product.priceRange}</span>
             )}
           </div>
         </div>
