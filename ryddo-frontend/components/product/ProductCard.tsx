@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-
+import { getCldImageUrl } from 'next-cloudinary';
 interface ProductCardProps {
   product: {
     id: number;
@@ -18,8 +18,20 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
+  //making sure name matches the same format its in the cloudinary CDN
+  const cloudinaryFormattedName = product.name
+    .replace(/\s+/g, '-')
+    .replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '')
+    .toLowerCase();
+
+  const imageUrl = getCldImageUrl({
+    src: cloudinaryFormattedName,
+  });
+
+  console.log(cloudinaryFormattedName, imageUrl);
+
   return (
-    <article className='relative flex flex-col items-center mb-8 rounded-[10px] overflow-hidden border border-gray-100 bg-white w-full max-w-md'>
+    <article className='relative flex flex-col items-center mb-5 rounded-[10px] overflow-hidden border border-gray-100 bg-white w-full max-w-md'>
       <Link
         href={`/products/${product.type}/${product.id}`}
         title={`View details for ${product.name}`}
@@ -45,7 +57,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         {/* Product Image */}
         <div className='w-full px-2'>
           <Image
-            src={product.image}
+            src={imageUrl}
             alt={`${product.name} || 'Product image'}`}
             width={400}
             height={400}

@@ -9,6 +9,10 @@ const nextConfig: NextConfig = {
         hostname: 'ryddo.ufs.sh',
         pathname: '/f/*',
       },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+      },
     ],
   },
 };
