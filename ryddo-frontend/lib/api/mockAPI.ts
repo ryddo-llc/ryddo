@@ -58,19 +58,24 @@ const api = {
   },
 
   // Get featured products (bestsellers, new arrivals, on sale)
-  getFeaturedProducts: async (feature: string) => {
+  getFeaturedProducts: async (feature: string, type?: string) => {
     await delay(400 + Math.random() * 400);
     let featuredProducts: Product[];
-
+    let productsToSearch: Product[] = products;
+    if (type) {
+      productsToSearch = products.filter((product) => product.type === type);
+    }
     switch (feature) {
       case 'bestSeller':
-        featuredProducts = products.filter((product) => product.bestSeller);
+        featuredProducts = productsToSearch.filter(
+          (product) => product.bestSeller
+        );
         break;
       case 'new':
-        featuredProducts = products.filter((product) => product.new);
+        featuredProducts = productsToSearch.filter((product) => product.new);
         break;
       case 'onSale':
-        featuredProducts = products.filter((product) => product.onSale);
+        featuredProducts = productsToSearch.filter((product) => product.onSale);
         break;
       default:
         featuredProducts = [];

@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import api from '../../lib/api/mockAPI';
 import { Products } from '../../app/types/products';
 import Loading from '../ui/Loading';
+import ProductsFilterDropdown from './ProductsFilterDropdown';
 
 export default function ProductLayout() {
   const productsPerPage = 9;
@@ -52,7 +53,7 @@ export default function ProductLayout() {
         <h3 className='text-zinc-800 text-sm font-medium leading-loose'>
           Showing {currentNumberOfProducts} results
         </h3>
-        <h3>Filter</h3>
+        <ProductsFilterDropdown />
       </div>
       <ProductsGrid products={products.slice(0, productsPerPage)} />
       {error && <div>{error}</div>}
