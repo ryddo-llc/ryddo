@@ -28,7 +28,7 @@ export default function ProductCard({ product }: ProductCardProps) {
     src: cloudinaryFormattedName,
   });
 
-  console.log(cloudinaryFormattedName, imageUrl);
+  
 
   return (
     <article className='relative flex flex-col items-center mb-5 rounded-[10px] overflow-hidden border border-gray-100 bg-white w-full max-w-md'>
