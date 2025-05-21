@@ -305,7 +305,7 @@ const products = [
   {
     id: 32,
     type: 'gear',
-    name: 'TLD Stage Helmet',
+    name: 'TLD-Stage Helmet',
     image: '/images/Products/tld-stage-helmet.png',
     priceRange: '$177 - $299',
     onSale: true,
@@ -345,7 +345,7 @@ const products = [
   {
     id: 36,
     type: 'gear',
-    name: 'MSRC Potential V2',
+    name: 'MSPC Potential V2',
     image: '/images/Products/msrc-potential-v2.png',
     price: '$320',
     onSale: true,
@@ -365,7 +365,7 @@ const products = [
   {
     id: 38,
     type: 'gear',
-    name: 'MSRC Link Roll Top',
+    name: 'MSPC Link Roll Top',
     image: '/images/Products/msrc-link-roll-top.png',
     price: '$188',
     onSale: false,
@@ -385,7 +385,7 @@ const products = [
   {
     id: 40,
     type: 'gear',
-    name: 'MSRC Lightning',
+    name: 'MSPC Lightning',
     image: '/images/Products/msrc-lightning.png',
     price: '$255',
     onSale: false,
@@ -425,7 +425,7 @@ const products = [
   {
     id: 44,
     type: 'accessories',
-    name: 'PNW Extension Mount',
+    name: 'PWR Extension Mount',
     image: '/images/Products/pnw-extension-mount.png',
     price: '$39.95',
     onSale: false,

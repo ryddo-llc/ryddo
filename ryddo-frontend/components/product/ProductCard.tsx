@@ -21,7 +21,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   //making sure name matches the same format its in the cloudinary CDN
   const cloudinaryFormattedName = product.name
     .replace(/\s+/g, '-')
-    .replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '')
+    .replace(/[&\/\\#,+()$~%'":*?<>{}]/g, '')
     .toLowerCase();
 
   const imageUrl = getCldImageUrl({

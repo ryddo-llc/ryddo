@@ -7,6 +7,7 @@ import { Products } from '../../app/types/products';
 import Loading from '../ui/Loading';
 
 export default function ProductLayout() {
+  const productsPerPage = 9;
   const [products, setProducts] = useState<Products[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>();
@@ -47,10 +48,12 @@ export default function ProductLayout() {
   return (
     <div className='flex flex-col items-center w-full'>
       <div className='flex justify-between  w-full'>
-        <h3>Number of products</h3>
+        <h3>
+          Showing {productsPerPage} of {products.length}
+        </h3>
         <h3>Filter</h3>
       </div>
-      <ProductsGrid products={products} />
+      <ProductsGrid products={products.slice(0, productsPerPage)} />
       {error && <div>{error}</div>}
       <div>Pagination</div>
     </div>
