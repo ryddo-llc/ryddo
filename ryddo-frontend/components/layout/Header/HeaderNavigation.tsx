@@ -1,4 +1,6 @@
+'use client';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React from 'react';
 
 type navigationLinksProps = {
@@ -6,6 +8,7 @@ type navigationLinksProps = {
   path: string;
 };
 export default function HeaderNavigation() {
+  const currentPathname = usePathname();
   const navigationLinks = [
     {
       name: 'home',
@@ -13,23 +16,23 @@ export default function HeaderNavigation() {
     },
     {
       name: 'e-bikes',
-      path: '/products',
+      path: '/products/e-bikes',
     },
     {
       name: 'e-scooters',
-      path: '/products',
+      path: '/products/e-scooters',
     },
     {
       name: 'gear',
-      path: '/products',
+      path: '/products/gear',
     },
     {
       name: 'accessories',
-      path: '/products',
+      path: '/products/accessories',
     },
     {
       name: 'service',
-      path: '/service',
+      path: '/products/service',
     },
   ];
   return (
@@ -38,7 +41,9 @@ export default function HeaderNavigation() {
         <Link
           key={link.name}
           href={link.path}
-          className='text-black font-extrabold hover:underline hover:decoration-[#F92F7B] hover:underline-offset-6 hover:decoration-2'
+          className={`font-extrabold hover:underline hover:decoration-[#F92F7B] hover:underline-offset-6 hover:decoration-2 ${
+            currentPathname === link.path ? 'text-[#F92F7B]' : 'text-black'
+          }`}
         >
           {link.name}
         </Link>
