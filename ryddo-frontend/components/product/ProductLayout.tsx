@@ -8,10 +8,11 @@ import Loading from '../ui/Loading';
 
 export default function ProductLayout() {
   const productsPerPage = 9;
+
   const [products, setProducts] = useState<Products[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>();
-
+  const currentNumberOfProducts = products.slice(0, productsPerPage).length;
   const pathname = usePathname();
 
   useEffect(() => {
@@ -47,9 +48,9 @@ export default function ProductLayout() {
 
   return (
     <div className='flex flex-col items-center w-full'>
-      <div className='flex justify-between  w-full'>
-        <h3>
-          Showing {productsPerPage} of {products.length}
+      <div className='flex justify-between w-full'>
+        <h3 className='text-zinc-800 text-sm font-medium leading-loose'>
+          Showing {currentNumberOfProducts} results
         </h3>
         <h3>Filter</h3>
       </div>
