@@ -1,5 +1,4 @@
 import React from 'react';
-import PartnersContactBar from './PartnersContactBar';
 import InfoSection from './InfoSection';
 import ShopLinks from './ShopLinks';
 import ExploreLinks from './ExploreLinks';

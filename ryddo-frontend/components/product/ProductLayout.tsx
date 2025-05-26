@@ -6,30 +6,52 @@ import api from '../../lib/api/mockAPI';
 import { Products } from '../../app/types/products';
 import Loading from '../ui/Loading';
 import ProductsFilterDropdown from './ProductsFilterDropdown';
+import Pagination from '../ui/Pagination';
 
 export default function ProductLayout() {
   const productsPerPage = 9;
-
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [totalItems, setTotalItems] = useState<number>(0);
   const [products, setProducts] = useState<Products[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>();
-  const currentNumberOfProducts = products.slice(0, productsPerPage).length;
+
   const pathname = usePathname();
+
+  const currentNumberOfProducts = products.length;
+
+  // Handle page changes
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    // Optional: scroll to top when page changes
+    window.scrollTo({ top: 5, behavior: 'smooth' });
+  };
+
+  //set current page to 1 when path changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [pathname]);
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         // Show loading state
         setLoading(true);
+        setError(undefined);
         const pathParts = pathname.split('/').filter((part) => part !== '');
         const currentPathname = pathParts[1];
         // Call the mock API
         const response = await api.getProductsByType(currentPathname);
 
-        // Update your state with the response data
-        setProducts(response.data);
+        const startIndex = (currentPage - 1) * productsPerPage;
+        const endIndex = Math.min(
+          startIndex + productsPerPage,
+          response.data.length
+        );
 
-        // Hide loading state
+        setProducts(response.data.slice(startIndex, endIndex));
+        setTotalItems(response.data.length);
+
         setLoading(false);
       } catch (error) {
         console.error('Error fetching products:', error);
@@ -38,7 +60,7 @@ export default function ProductLayout() {
       }
     };
     fetchProducts();
-  }, [pathname]);
+  }, [pathname, currentPage]);
 
   if (loading)
     return (
@@ -57,7 +79,12 @@ export default function ProductLayout() {
       </div>
       <ProductsGrid products={products.slice(0, productsPerPage)} />
       {error && <div>{error}</div>}
-      <div>Pagination</div>
+      <Pagination
+        currentPage={currentPage}
+        totalItems={totalItems}
+        itemsPerPage={productsPerPage}
+        onPageChange={handlePageChange}
+      />
     </div>
   );
 }
