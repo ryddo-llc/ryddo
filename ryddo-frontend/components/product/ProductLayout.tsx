@@ -18,22 +18,26 @@ export default function ProductLayout() {
 
   const pathname = usePathname();
 
-  // Get current page products
-
   const currentNumberOfProducts = products.length;
 
   // Handle page changes
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
     // Optional: scroll to top when page changes
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 5, behavior: 'smooth' });
   };
+
+  //set current page to 1 when path changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [pathname]);
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         // Show loading state
         setLoading(true);
+        setError(undefined);
         const pathParts = pathname.split('/').filter((part) => part !== '');
         const currentPathname = pathParts[1];
         // Call the mock API
