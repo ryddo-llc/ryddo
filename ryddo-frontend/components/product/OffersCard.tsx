@@ -1,5 +1,16 @@
 import React from 'react';
 
+interface Offer {
+  title: string;
+  subtitle: string;
+  highlightColor: string;
+  subtitleColor: string;
+}
+
+interface OffersCardProps {
+  offers?: Offer[];
+}
+
 export default function OffersCard({
   offers = [
     {
@@ -21,7 +32,7 @@ export default function OffersCard({
       subtitleColor: 'text-[#757575]',
     },
   ],
-}) {
+}: OffersCardProps) {
   return (
     <div className='max-w-sm'>
       <div className='space-y-6'>
