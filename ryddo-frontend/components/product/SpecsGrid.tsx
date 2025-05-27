@@ -1,14 +1,22 @@
 import React from 'react';
 import Image from 'next/image';
+interface SpecsGridProps {
+  range?: string;
+  speed?: string;
+  brakes?: string;
+  power?: string;
+  weight?: string;
+  tires?: string;
+}
 
 export default function SpecsGrid({
   range = '75+ mi.',
   speed = '28+ mph',
-  breaks = '4 Piston',
+  brakes = '4 Piston',
   power = '2,000W',
   weight = '80 lbs.',
   tires = '20"x5"',
-}) {
+}: SpecsGridProps) {
   const specs = [
     {
       label: 'Range',
@@ -20,7 +28,7 @@ export default function SpecsGrid({
     },
     {
       label: 'Brakes',
-      value: breaks,
+      value: brakes,
     },
     {
       label: 'Power',

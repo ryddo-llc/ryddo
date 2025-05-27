@@ -37,6 +37,9 @@ export default async function page({
           return <ScooterDetailPage />;
         case 'accessories':
           return <AccessoriesDetailPage />;
+        default:
+          console.error(`Unsupported product type: ${product.type}`);
+          notFound();
       }
     };
 
