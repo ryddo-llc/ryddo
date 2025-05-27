@@ -28,12 +28,10 @@ export default function ProductCard({ product }: ProductCardProps) {
     src: cloudinaryFormattedName,
   });
 
-  
-
   return (
     <article className='relative flex flex-col items-center mb-5 rounded-[10px] overflow-hidden border border-gray-100 bg-white w-full max-w-md'>
       <Link
-        href={`/products/${product.type}/${product.id}`}
+        href={`/product/${product.type}/${product.id}`}
         title={`View details for ${product.name}`}
         className='block w-full h-full'
       >
