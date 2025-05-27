@@ -22,10 +22,10 @@ export default function PriceCard({
   };
 
   return (
-    <div className='text-right p-2'>
+    <div className='text-right max-w-sm'>
       {/* Authorized Dealer Header */}
       <div className='mb-6'>
-        <h3 className='text-sm font-bold text-gray-900 mb-1'>
+        <h3 className='text-md font-bold text-gray-900 mb-1'>
           Authorized Dealer
         </h3>
         <p className='text-xs text-[#AE9D77] leading-relaxed'>

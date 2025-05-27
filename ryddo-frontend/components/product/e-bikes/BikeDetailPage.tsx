@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { getCldImageUrl } from 'next-cloudinary';
 import SpecsGrid from '../SpecsGrid';
 import PriceCard from '../PriceCard';
+import OffersCard from '../OffersCard';
 
 export default function BikeDetailPage() {
   const backgroundUrl = getCldImageUrl({
@@ -68,8 +69,18 @@ export default function BikeDetailPage() {
               </div>
             </div>
 
-            {/* Price Card - Positioned Absolutely on Right, aligned with subtitle */}
+            {/* Left side - OffersCard */}
+            <div className='hidden lg:block absolute left-0 top-0'>
+              <OffersCard />
+            </div>
+
+            {/* Right side - PriceCard */}
             <div className='hidden lg:block absolute right-0 top-0'>
+              <PriceCard />
+            </div>
+
+            {/* Price Card - Mobile/Tablet (shown below bike on smaller screens) */}
+            <div className='lg:hidden absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full mt-4'>
               <PriceCard />
             </div>
           </div>
