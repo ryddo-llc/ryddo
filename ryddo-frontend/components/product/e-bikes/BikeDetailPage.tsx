@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { getCldImageUrl } from 'next-cloudinary';
 import SpecsGrid from '../SpecsGrid';
+import PriceCard from '../PriceCard';
 
 export default function BikeDetailPage() {
   const backgroundUrl = getCldImageUrl({
@@ -15,7 +16,7 @@ export default function BikeDetailPage() {
   return (
     <section
       aria-labelledby='product-heading'
-      className='w-full min-h-[60vh] md:min-h-[70vh] lg:min-h-[80vh] max-h-screen relative overflow-hidden'
+      className='w-full min-h-[40vh] md:min-h-[50vh] lg:min-h-[80vh] max-h-screen relative overflow-hidden'
     >
       {/* Background Image */}
       <div className='absolute inset-0 w-full h-full opacity-40'>
@@ -42,29 +43,41 @@ export default function BikeDetailPage() {
             {/* Product Title */}
             <h1
               id='product-heading'
-              className='text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 leading-tight mb-2'
+              className='text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-zinc-800 leading-tight font-["Nunito"]'
             >
-              Super73-RX<span className='text-pink-500'>.</span>
+              Super73-RX<span className='text-[#F92F7B]'>.</span>
             </h1>
-            <p className='text-base md:text-lg lg:text-xl text-gray-600 font-light'>
+            <p className='self-stretch text-center justify-center text-neutral-500 text-3xl font-medium font-["Nunito"] leading-loose'>
               Performance Adventurer
             </p>
           </div>
 
-          {/* Center - Bike Image */}
-          <div className='flex-1 flex items-center justify-center min-h-0 overflow-hidden'>
-            <div className='w-full max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-3xl xl:max-w-5xl mx-auto px-4'>
-              <Image
-                src={bikeImage}
-                alt='Super-73'
-                width={10000}
-                height={10000}
-                priority
-                className='w-full h-auto object-contain max-h-full'
-              />
+          {/* Middle Section - Bike Image Centered with Price Card on Right */}
+          <div className='flex-1 flex items-center justify-center min-h-0 overflow-hidden mb-8 relative'>
+            {/* Centered Bike Image */}
+            <div className='flex items-center justify-center'>
+              <div className='w-full max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-3xl xl:max-w-4xl mx-auto px-4'>
+                <Image
+                  src={bikeImage}
+                  alt='Super-73'
+                  width={1000}
+                  height={1000}
+                  priority
+                  className='w-full h-auto object-contain max-h-full'
+                />
+              </div>
+            </div>
+
+            {/* Price Card - Positioned Absolutely on Right, aligned with subtitle */}
+            <div className='hidden lg:block absolute right-0 top-0'>
+              <PriceCard />
             </div>
           </div>
-          <SpecsGrid />
+
+          {/* Bottom Section - Specs Grid */}
+          <div className='mt-auto'>
+            <SpecsGrid />
+          </div>
         </div>
       </div>
     </section>
