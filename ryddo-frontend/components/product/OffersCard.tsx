@@ -37,7 +37,10 @@ export default function OffersCard({
     <div className='max-w-sm'>
       <div className='space-y-6'>
         {offers.map((offer, index) => (
-          <div key={index} className='flex items-start justify-between'>
+          <div
+            key={`${offer.title}-${index}`}
+            className='flex items-start justify-between'
+          >
             <div className='flex-1'>
               <h3 className={`text-lg font-bold mb-1 ${offer.highlightColor}`}>
                 {offer.title}
