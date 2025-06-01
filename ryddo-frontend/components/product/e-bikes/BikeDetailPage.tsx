@@ -1,19 +1,19 @@
 import React from 'react';
 import Image from 'next/image';
-import { getCldImageUrl } from 'next-cloudinary';
+
 import SpecsGrid from '../SpecsGrid';
 import PriceCard from '../PriceCard';
 import OffersCard from '../OffersCard';
 
-export default function BikeDetailPage() {
-  const backgroundUrl = getCldImageUrl({
-    src: 'detailpage',
-  });
+interface BikeDetailPageProps {
+  backgroundURL: string;
+  bikeImageURL: string;
+}
 
-  const bikeImage = getCldImageUrl({
-    src: 'super-73-detailpage-image',
-  });
-
+export default function BikeDetailPage({
+  backgroundURL,
+  bikeImageURL,
+}: BikeDetailPageProps) {
   return (
     <section
       aria-labelledby='product-heading'
@@ -22,7 +22,7 @@ export default function BikeDetailPage() {
       {/* Background Image */}
       <div className='absolute inset-0 w-full h-full opacity-40'>
         <Image
-          src={backgroundUrl}
+          src={backgroundURL || '/default-background.jpg'}
           alt='detailpage background'
           fill
           className='object-cover'
@@ -59,7 +59,7 @@ export default function BikeDetailPage() {
             <div className='flex items-center justify-center'>
               <div className='w-full max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-3xl xl:max-w-4xl mx-auto px-4'>
                 <Image
-                  src={bikeImage}
+                  src={bikeImageURL}
                   alt='Super-73'
                   width={1000}
                   height={1000}

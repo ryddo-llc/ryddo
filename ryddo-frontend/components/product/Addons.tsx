@@ -16,10 +16,10 @@ export default function Addons({ name = 'Super73-RX' }) {
     <section className='py-16 px-4 bg-gradient-to-br bg-white'>
       <div className='max-w-6xl mx-auto text-center'>
         {/* Title */}
-        <h2 className='text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-12'>
+        <h2 className='text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 mb-12'>
           Add-Ons for your
           <br />
-          <span className='text-pink-500'>new {name}.</span>
+          <span className='text-[#F92F7B]'>new {name}.</span>
         </h2>
 
         {/* Grid of Add-Ons with Background Text */}
