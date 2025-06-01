@@ -1,9 +1,9 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
-import BikeDetailPage from '../../../../components/product/e-bikes/BikeDetailPage';
 import ScooterDetailPage from '../../../../components/product/e-scooter/ScooterDetailPage';
 import AccessoriesDetailPage from '../../../../components/product/accessories/AccessoriesDetailPage';
 import mockAPI from '../../../../lib/api/mockAPI';
+import EBikeLayout from '../../../../components/product/e-bikes/EBikeLayout';
 
 export default async function page({
   params,
@@ -26,13 +26,11 @@ export default async function page({
     const data = await mockAPI.getProductById(productId);
     const product = data.data;
 
-    console.log(product);
-
     // Render appropriate component based on product type
     const renderProductDetail = () => {
       switch (product.type) {
         case 'e-bikes':
-          return <BikeDetailPage />;
+          return <EBikeLayout />;
         case 'e-scooters':
           return <ScooterDetailPage />;
         case 'accessories':

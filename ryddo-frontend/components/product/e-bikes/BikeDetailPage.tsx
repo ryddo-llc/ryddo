@@ -23,7 +23,7 @@ export default function BikeDetailPage() {
       <div className='absolute inset-0 w-full h-full opacity-40'>
         <Image
           src={backgroundUrl}
-          alt='Person riding an electric bicycle on a scenic coastal road'
+          alt='detailpage background'
           fill
           className='object-cover'
           priority
@@ -76,11 +76,6 @@ export default function BikeDetailPage() {
 
             {/* Right side - PriceCard */}
             <div className='hidden lg:block absolute right-0 top-0'>
-              <PriceCard />
-            </div>
-
-            {/* Price Card - Mobile/Tablet (shown below bike on smaller screens) */}
-            <div className='lg:hidden absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full mt-4'>
               <PriceCard />
             </div>
           </div>
