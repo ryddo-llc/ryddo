@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 interface ProductShowcaseProps {
   bikeImageURL: string;
@@ -23,10 +24,14 @@ const ProductShowcase = ({ bikeImageURL }: ProductShowcaseProps) => {
         </span>
       </div>
 
-      <button className='absolute left-6 top-1/2 -translate-y-1/2 z-20 bg-pink-500 hover:bg-pink-600 text-white p-3 rounded-lg shadow-lg transition-all duration-300 hover:scale-110'></button>
+      <button className='absolute left-6 top-1/2 -translate-y-1/2 z-20 bg-pink-500 hover:bg-pink-600 text-white p-3 rounded-lg shadow-lg transition-all duration-300 hover:scale-110'>
+        <FaChevronLeft />
+      </button>
 
       {/* Right Navigation Arrow */}
-      <button className='absolute right-6 top-1/2 -translate-y-1/2 z-20 bg-pink-500 hover:bg-pink-600 text-white p-3 rounded-lg shadow-lg transition-all duration-300 hover:scale-110'></button>
+      <button className='absolute right-6 top-1/2 -translate-y-1/2 z-20 bg-pink-500 hover:bg-pink-600 text-white p-3 rounded-lg shadow-lg transition-all duration-300 hover:scale-110'>
+        <FaChevronRight />
+      </button>
 
       {/* Main Content - Removed pl-120 and improved centering */}
       <div className='relative z-10 w-full h-full flex flex-col items-center justify-center px-4 max-w-7xl mx-auto'>
