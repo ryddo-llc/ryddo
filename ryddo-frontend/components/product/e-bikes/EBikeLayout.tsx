@@ -3,6 +3,7 @@ import BikeDetailPage from './BikeDetailPage';
 import Addons from '../Addons';
 import ProductShowcase from '../ProductShowcase';
 import { getCldImageUrl } from 'next-cloudinary';
+import PerformanceComparison from '../PerformanceComparison';
 
 const backgroundURL = getCldImageUrl({
   src: 'detailpage',
@@ -10,6 +11,10 @@ const backgroundURL = getCldImageUrl({
 
 const bikeImageURL = getCldImageUrl({
   src: 'super-73-detailpage-image',
+});
+
+const bikeImagePerformance = getCldImageUrl({
+  src: 'super-73-performace',
 });
 
 export default function EBikeLayout() {
@@ -21,6 +26,7 @@ export default function EBikeLayout() {
       />
       <Addons />
       <ProductShowcase bikeImageURL={bikeImageURL} />
+      <PerformanceComparison bikeImagePerformance={bikeImagePerformance} />
     </>
   );
 }
