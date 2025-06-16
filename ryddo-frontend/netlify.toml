@@ -1,6 +1,6 @@
 [build]
   base = "ryddo-frontend"
-  publish = "ryddo-frontend/.next"
+  publish = ".next"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
