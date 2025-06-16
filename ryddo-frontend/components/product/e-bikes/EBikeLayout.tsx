@@ -4,6 +4,7 @@ import Addons from '../Addons';
 import ProductShowcase from '../ProductShowcase';
 import { getCldImageUrl } from 'next-cloudinary';
 import PerformanceComparison from '../PerformanceComparison';
+import ProductFeatures from '../ProductFeatures';
 
 const backgroundURL = getCldImageUrl({
   src: 'detailpage',
@@ -27,6 +28,7 @@ export default function EBikeLayout() {
       <Addons />
       <ProductShowcase bikeImageURL={bikeImageURL} />
       <PerformanceComparison bikeImagePerformance={bikeImagePerformance} />
+      <ProductFeatures />
     </>
   );
 }
