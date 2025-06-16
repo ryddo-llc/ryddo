@@ -1,15 +1,38 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 export default function PerformanceMetrics() {
   const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Trigger animation after component mounts
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 300);
-    return () => clearTimeout(timer);
+    // Trigger animation after when it comes on the screen
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          // Optional: Stop observing after first trigger
+          if (ref.current) {
+            observer.unobserve(ref.current);
+          }
+        }
+      },
+      {
+        threshold: 0.1, // Trigger when 10% visible
+        rootMargin: '0px 0px -50px 0px', // Trigger 50px before entering viewport
+      }
+    );
+
+    const currentRef = ref.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
   }, []);
 
   const performanceMetrics = [
@@ -59,7 +82,7 @@ export default function PerformanceMetrics() {
   return (
     <>
       {performanceMetrics.map((metric, index) => (
-        <div key={index} className='space-y-3'>
+        <div ref={ref} key={index} className='space-y-3'>
           <div className='flex justify-between items-start'>
             <h3 className='font-bold text-gray-900 text-sm leading-tight max-w-xs'>
               {metric.label}
