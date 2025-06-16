@@ -80,10 +80,10 @@ export default function PerformanceMetrics() {
     },
   ];
   return (
-    <>
+    <div ref={ref} className='space-y-10'>
       {performanceMetrics.map((metric, index) => (
-        <div ref={ref} key={index} className='space-y-3'>
-          <div className='flex justify-between items-start'>
+        <div key={index}>
+          <div className='flex justify-between items-start p-1'>
             <h3 className='font-bold text-gray-900 text-sm leading-tight max-w-xs'>
               {metric.label}
             </h3>
@@ -91,7 +91,13 @@ export default function PerformanceMetrics() {
           <p className='text-xs text-gray-500'>{metric.sublabel}</p>
 
           {/* Progress bar container */}
-          <div className='w-full bg-gray-200 rounded-full h-1.5 overflow-hidden'>
+          <div
+            role='progressbar'
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-valuenow={isVisible ? metric.percentage : 0}
+            className='w-full bg-gray-200 rounded-full h-1.5 overflow-hidden'
+          >
             <div
               className={`h-1.5 ${metric.color} rounded-full transition-all duration-1000 ease-out`}
               style={{
@@ -102,6 +108,6 @@ export default function PerformanceMetrics() {
           </div>
         </div>
       ))}
-    </>
+    </div>
   );
 }
