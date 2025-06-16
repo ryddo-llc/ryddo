@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
+  trailingSlash: true,
   /* config options here */
   images: {
     remotePatterns: [
