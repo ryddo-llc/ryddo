@@ -18,6 +18,17 @@ const bikeImagePerformance = getCldImageUrl({
   src: 'super-73-performace',
 });
 
+const bikeBraking = getCldImageUrl({
+  src: 'powerful-breaking',
+});
+
+const bikeSuspension = getCldImageUrl({
+  src: 'headlight-taillight',
+});
+const bikeHeadlight = getCldImageUrl({
+  src: 'adjustable-suspension',
+});
+
 export default function EBikeLayout() {
   return (
     <>
@@ -28,7 +39,11 @@ export default function EBikeLayout() {
       <Addons />
       <ProductShowcase bikeImageURL={bikeImageURL} />
       <PerformanceComparison bikeImagePerformance={bikeImagePerformance} />
-      <ProductFeatures />
+      <ProductFeatures
+        braking={bikeBraking}
+        suspension={bikeSuspension}
+        headlight={bikeHeadlight}
+      />
     </>
   );
 }

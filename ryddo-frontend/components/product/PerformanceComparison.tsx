@@ -23,22 +23,22 @@ export default function PerformanceComparison({
         />
       </div>
 
-      <div className=' z-10 max-w-7xl mx-auto p-8'>
-        {/* Title at the top */}
-        <div className='text-center mb-12'>
-          <h1 className='text-7xl font-bold text-gray-900 leading-tight'>
+      {/* Title at the top */}
+      <div className='relative z-10 max-w-7xl mx-auto p-8 sm:p-6 md:p-10'>
+        <div className='text-center mb-6 sm:mb-8 md:mb-12'>
+          <h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight'>
             Compare <span className='text-[#F92F7B]'>Performance</span>
           </h1>
-          <p className='text-gray-600 text-xl mt-4'>
+          <p className='text-gray-600 text-lg sm:text-xl mt-2 sm:mt-4'>
             Compare the RX to its competition
           </p>
         </div>
+      </div>
 
-        <div className='flex justify-end pl-5'>
-          {/* Right side - Performance Metrics */}
-          <div className='w-1/3 space-y-6 pr-8'>
-            <PerformanceMetrics />
-          </div>
+      {/* Performance Metrics - Absolutely positioned */}
+      <div className='absolute bottom-4 left-4 right-4 md:bottom-auto md:top-1/2 md:-translate-y-1/2 md:right-8 md:left-auto z-10 w-auto md:w-1/3'>
+        <div className='space-y-6 md:pr-8'>
+          <PerformanceMetrics />
         </div>
       </div>
     </div>
