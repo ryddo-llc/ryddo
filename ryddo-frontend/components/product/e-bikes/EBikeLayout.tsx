@@ -5,6 +5,8 @@ import ProductShowcase from '../ProductShowcase';
 import { getCldImageUrl } from 'next-cloudinary';
 import PerformanceComparison from '../PerformanceComparison';
 import ProductFeatures from '../ProductFeatures';
+import TechSpecs from '../TechSpecs';
+import { bikePowerSpecs } from '../../../lib/utils/techSpecs';
 
 const backgroundURL = getCldImageUrl({
   src: 'detailpage',
@@ -29,6 +31,9 @@ const bikeHeadlight = getCldImageUrl({
   src: 'adjustable-suspension',
 });
 
+/**
+ * Renders the complete e-bike detail page layout, assembling all major sections including bike details, addons, product showcase, performance comparison, feature highlights, and technical specifications.
+ */
 export default function EBikeLayout() {
   return (
     <>
@@ -44,6 +49,7 @@ export default function EBikeLayout() {
         suspension={bikeSuspension}
         headlight={bikeHeadlight}
       />
+      <TechSpecs powerSpecs={bikePowerSpecs} />
     </>
   );
 }
