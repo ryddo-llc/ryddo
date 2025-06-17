@@ -4,6 +4,7 @@ import Addons from '../Addons';
 import ProductShowcase from '../ProductShowcase';
 import { getCldImageUrl } from 'next-cloudinary';
 import PerformanceComparison from '../PerformanceComparison';
+import ProductFeatures from '../ProductFeatures';
 
 const backgroundURL = getCldImageUrl({
   src: 'detailpage',
@@ -17,6 +18,17 @@ const bikeImagePerformance = getCldImageUrl({
   src: 'super-73-performace',
 });
 
+const bikeBraking = getCldImageUrl({
+  src: 'powerful-breaking',
+});
+
+const bikeSuspension = getCldImageUrl({
+  src: 'headlight-taillight',
+});
+const bikeHeadlight = getCldImageUrl({
+  src: 'adjustable-suspension',
+});
+
 export default function EBikeLayout() {
   return (
     <>
@@ -27,6 +39,11 @@ export default function EBikeLayout() {
       <Addons />
       <ProductShowcase bikeImageURL={bikeImageURL} />
       <PerformanceComparison bikeImagePerformance={bikeImagePerformance} />
+      <ProductFeatures
+        braking={bikeBraking}
+        suspension={bikeSuspension}
+        headlight={bikeHeadlight}
+      />
     </>
   );
 }
