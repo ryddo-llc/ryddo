@@ -18,7 +18,7 @@ export default function PartnersContactBar() {
   ];
 
   return (
-    <div className='bg-black flex flex-col lg:flex-row text-white items-stretch font-bold sticky bottom-0 left-0 right-0 z-50 text-xs sm:text-sm'>
+    <div className='bg-black flex flex-col lg:flex-row text-white items-stretch font-bold sticky bottom-0 left-0 right-0 z-50 text-xs sm:text-sm w-full'>
       {/* Newsletter Signup Section */}
       <div className='h-12 sm:h-14 md:h-16 flex items-center justify-center border-b lg:border-b-0 lg:border-r border-white px-3 sm:px-6 md:px-10 lg:px-12 xl:px-18 hover:bg-[#F92F7B] transition-colors duration-200'>
         <Link href='/' className='text-center'>
