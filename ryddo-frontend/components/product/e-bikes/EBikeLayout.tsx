@@ -31,6 +31,9 @@ const bikeHeadlight = getCldImageUrl({
   src: 'adjustable-suspension',
 });
 
+/**
+ * Renders the complete e-bike detail page layout, assembling all major sections including bike details, addons, product showcase, performance comparison, feature highlights, and technical specifications.
+ */
 export default function EBikeLayout() {
   return (
     <>
