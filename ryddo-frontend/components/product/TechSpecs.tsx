@@ -29,7 +29,7 @@ const TechSpecs = ({ powerSpecs }: { powerSpecs: PowerSpecsTypes[] }) => {
     ];
 
   return (
-    <div className='bg-gray-100 p-6 sm:p-8 md:p-10 lg:p-16 max-w-8xl mx-auto'>
+    <div className='bg-[#F5F5F5] p-6 sm:p-8 md:p-10 lg:p-16 max-w-8xl mx-auto'>
       {/* Header */}
       <div className='mb-8 md:mb-12'>
         <h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight'>
@@ -47,13 +47,19 @@ const TechSpecs = ({ powerSpecs }: { powerSpecs: PowerSpecsTypes[] }) => {
               onClick={() => toggleSection(section.key)}
               className='w-full flex items-center justify-between py-4 md:py-6 text-left hover:bg-gray-50 transition-colors duration-200'
             >
-              <h2 className='text-xl sm:text-2xl md:text-3xl font-bold text-black'>
+              <h2
+                className={`text-xl sm:text-2xl md:text-3xl font-bold ${
+                  expandedSections[section.key]
+                    ? 'text-[#F92F7B]'
+                    : 'text-black'
+                }`}
+              >
                 {section.title}
               </h2>
               <div className='flex-1 h-px bg-gray-300 mx-6'></div>
               <div className='flex items-center'>
                 {expandedSections[section.key] ? (
-                  <AiOutlineMinus className='w-6 h-6 md:w-8 md:h-8 text-black' />
+                  <AiOutlineMinus className='w-6 h-6 md:w-8 md:h-8 text-[#F92F7B]' />
                 ) : (
                   <AiOutlinePlus className='w-6 h-6 md:w-8 md:h-8 text-black' />
                 )}
