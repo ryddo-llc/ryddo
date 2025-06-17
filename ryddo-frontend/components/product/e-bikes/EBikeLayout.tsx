@@ -6,6 +6,7 @@ import { getCldImageUrl } from 'next-cloudinary';
 import PerformanceComparison from '../PerformanceComparison';
 import ProductFeatures from '../ProductFeatures';
 import TechSpecs from '../TechSpecs';
+import { bikePowerSpecs } from '../../../lib/utils/techSpecs';
 
 const backgroundURL = getCldImageUrl({
   src: 'detailpage',
@@ -45,7 +46,7 @@ export default function EBikeLayout() {
         suspension={bikeSuspension}
         headlight={bikeHeadlight}
       />
-      <TechSpecs />
+      <TechSpecs powerSpecs={bikePowerSpecs} />
     </>
   );
 }
