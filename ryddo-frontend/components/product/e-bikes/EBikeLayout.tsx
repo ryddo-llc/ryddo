@@ -7,6 +7,7 @@ import PerformanceComparison from '../PerformanceComparison';
 import ProductFeatures from '../ProductFeatures';
 import TechSpecs from '../TechSpecs';
 import { bikePowerSpecs } from '../../../lib/utils/techSpecs';
+import RelatedProducts from '../RelatedProducts';
 
 const backgroundURL = getCldImageUrl({
   src: 'detailpage',
@@ -50,6 +51,7 @@ export default function EBikeLayout() {
         headlight={bikeHeadlight}
       />
       <TechSpecs powerSpecs={bikePowerSpecs} />
+      <RelatedProducts />
     </>
   );
 }
