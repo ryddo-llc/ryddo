@@ -66,7 +66,7 @@ const RelatedProducts = () => {
 
             {/* Product Image Container */}
             <div
-              className={`relative w-full h-40 sm:h-48 lg:h-44 xl:h-48 rounded-lg mb-3 sm:mb-4 bg-gradient-to-br ${product.gradient} overflow-hidden`}
+              className={`relative w-full h-40 sm:h-48 lg:h-60 xl:h-80 rounded-lg mb-3 sm:mb-4 bg-gradient-to-br ${product.gradient} overflow-hidden`}
             >
               {/* Placeholder for bike illustrations - you'll replace with actual images */}
               <div className='absolute inset-0 flex items-center justify-center'>
@@ -103,7 +103,7 @@ const RelatedProducts = () => {
 
               {/* Quick View Button */}
               <button className='w-full bg-pink-500 hover:bg-pink-600 text-white py-2 sm:py-2.5 px-3 sm:px-4 rounded-lg text-xs sm:text-sm font-medium transition-colors duration-200 flex items-center justify-center gap-2 group'>
-                <AiOutlineEye className='text-sm sm:text-base' />
+                <AiOutlineEye className='text-xl text-black' />
                 <span className='hidden xs:inline'>Quick View</span>
                 <span className='xs:hidden'>View</span>
               </button>
