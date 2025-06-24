@@ -63,9 +63,9 @@ const api = {
     await delay(300 + Math.random() * 500);
     const randomNumbers = generateUniqueRandomNumbers(4, 1, products.length);
 
-    const randomProducts: Product[] = [];
-
-    randomNumbers.map((id) => randomProducts.push(products[id - 1]));
+    const randomProducts: Product[] = randomNumbers
+      .map((id) => products.find((product) => product.id === id))
+      .filter((product) => product !== undefined);
     return { data: randomProducts };
   },
   // Get featured products (bestsellers, new arrivals, on sale)
