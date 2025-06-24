@@ -3,16 +3,13 @@ export default function generateUniqueRandomNumbers(
   min: number,
   max: number
 ): number[] {
-  const numbers: number[] = [];
+  const availableRange = max - min + 1;
+  const allNumbers = Array.from({ length: availableRange }, (_, i) => min + i);
 
-  while (numbers.length < count) {
-    const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
-
-    // Only add if not already in array
-    if (!numbers.includes(randomNum)) {
-      numbers.push(randomNum);
-    }
+  for (let i = allNumbers.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [allNumbers[i], allNumbers[j]] = [allNumbers[j], allNumbers[i]];
   }
 
-  return numbers;
+  return allNumbers.slice(0, count);
 }
