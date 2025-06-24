@@ -1,45 +1,26 @@
+'use client';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { AiOutlineEye } from 'react-icons/ai';
-
+import api from '../../lib/api/mockAPI';
+import { Product } from '../../lib/data/products';
+import cloudinaryFormat from '../../lib/utils/cloudinaryFormat';
 const RelatedProducts = () => {
-  const products = [
-    {
-      id: 1,
-      name: 'Rayolt Ambassador',
-      price: '$4,200',
-      originalPrice: null,
-      image: '/api/placeholder/280/200',
-      hasDiscount: false,
-      gradient: 'from-green-100 to-purple-100',
-    },
-    {
-      id: 2,
-      name: 'Kalk INK5 - Demo',
-      price: '$9,900',
-      originalPrice: '$17,500',
-      image: '/api/placeholder/280/200',
-      hasDiscount: true,
-      gradient: 'from-blue-100 to-gray-100',
-    },
-    {
-      id: 3,
-      name: 'Paul Smith Hummingbird',
-      price: '$6,100',
-      originalPrice: null,
-      image: '/api/placeholder/280/200',
-      hasDiscount: false,
-      gradient: 'from-purple-100 to-pink-100',
-    },
-    {
-      id: 4,
-      name: 'MSPC Potential 2-Way',
-      price: '$365',
-      originalPrice: null,
-      image: '/api/placeholder/280/200',
-      hasDiscount: false,
-      gradient: 'from-gray-100 to-blue-100',
-    },
-  ];
+  const [relatedProducts, setRelatedProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    const getRelatedProducts = async () => {
+      try {
+        const response = await api.getRelatedProducts();
+
+        setRelatedProducts(response.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    getRelatedProducts();
+  }, []);
 
   return (
     <section className='w-full max-w-8xl mx-auto px-8 sm:px-10 lg:px-14 py-18 sm:py-18 lg:py-22 bg-[#F5F5F5]'>
@@ -50,13 +31,13 @@ const RelatedProducts = () => {
 
       {/* Products Grid */}
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 sm:gap-10'>
-        {products.map((product) => (
+        {relatedProducts.map((product) => (
           <div
             key={product.id}
             className='bg-white rounded-xl p-4 sm:p-5 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group relative'
           >
             {/* Sale Badge */}
-            {product.hasDiscount && (
+            {product.onSale && (
               <div className='absolute top-3 sm:top-4 left-3 sm:left-4 z-10'>
                 <span className='bg-pink-500 text-white px-2 sm:px-3 py-1 rounded text-xs font-semibold'>
                   Sale!
@@ -66,7 +47,7 @@ const RelatedProducts = () => {
 
             {/* Product Image Container */}
             <div
-              className={`relative w-full h-40 sm:h-48 lg:h-60 xl:h-80 rounded-lg mb-3 sm:mb-4 bg-gradient-to-br ${product.gradient} overflow-hidden`}
+              className={`relative w-full h-40 sm:h-48 lg:h-60 xl:h-80 rounded-lg mb-3 sm:mb-4 bg-gradient-to-br  overflow-hidden`}
             >
               {/* Placeholder for bike illustrations - you'll replace with actual images */}
               <div className='absolute inset-0 flex items-center justify-center'>
@@ -75,7 +56,7 @@ const RelatedProducts = () => {
 
               {/* In real implementation, use Next.js Image component */}
               <Image
-                src={product.image}
+                src={cloudinaryFormat(product.name)}
                 alt={product.name}
                 fill
                 className='object-contain p-4'

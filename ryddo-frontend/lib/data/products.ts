@@ -1,3 +1,17 @@
+export interface Product {
+  id: number;
+  type: string;
+  image: string;
+  name: string;
+  originalPrice?: string;
+  salePrice?: string;
+  price?: string;
+  priceRange?: string;
+  onSale?: boolean;
+  new?: boolean;
+  bestSeller?: boolean;
+}
+
 const products = [
   // Existing products from the original array
   {
