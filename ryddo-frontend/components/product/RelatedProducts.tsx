@@ -94,7 +94,7 @@ const RelatedProducts = () => {
                   </span>
                 )}
                 <span className='font-bold text-gray-900 text-sm sm:text-base'>
-                  {product.price}
+                  {product.salePrice || product.price}
                 </span>
               </div>
 
