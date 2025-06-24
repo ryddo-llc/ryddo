@@ -5,22 +5,38 @@ import { AiOutlineEye } from 'react-icons/ai';
 import api from '../../lib/api/mockAPI';
 import { Product } from '../../lib/data/products';
 import cloudinaryFormat from '../../lib/utils/cloudinaryFormat';
+import Loading from '../ui/Loading';
 const RelatedProducts = () => {
   const [relatedProducts, setRelatedProducts] = useState<Product[]>([]);
-
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   useEffect(() => {
     const getRelatedProducts = async () => {
       try {
+        setLoading(true);
+        setError(null);
         const response = await api.getRelatedProducts();
 
         setRelatedProducts(response.data);
       } catch (err) {
-        console.log(err);
+        console.error('Failed to fetch related products:', err);
+        setError('Failed to load related products. Please try again later.');
+      } finally {
+        setLoading(false);
       }
     };
 
     getRelatedProducts();
   }, []);
+
+  if (loading)
+    return (
+      <div className='flex justify-center items-center bg-[#F5F5F5] w-full max-w-8xl mx-auto px-8 sm:px-10 lg:px-14 py-18 sm:py-18 lg:py-22'>
+        <Loading />
+      </div>
+    );
+
+  if (error) return <div>{error}</div>;
 
   return (
     <section className='w-full max-w-8xl mx-auto px-8 sm:px-10 lg:px-14 py-18 sm:py-18 lg:py-22 bg-[#F5F5F5]'>
