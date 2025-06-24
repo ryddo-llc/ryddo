@@ -1,5 +1,6 @@
 // Create a file called mockApi.js
 import products from '../data/products'; // Your existing products array
+import generateUniqueRandomNumbers from '../utils/generateUniqueRandomNumbers';
 
 interface Product {
   id: number;
@@ -57,6 +58,16 @@ const api = {
     return { data: searchResults };
   },
 
+  //get similar products
+  getRelatedProducts: async () => {
+    await delay(300 + Math.random() * 500);
+    const randomNumbers = generateUniqueRandomNumbers(4, 1, products.length);
+
+    const randomProducts: Product[] = randomNumbers
+      .map((id) => products.find((product) => product.id === id))
+      .filter((product) => product !== undefined);
+    return { data: randomProducts };
+  },
   // Get featured products (bestsellers, new arrivals, on sale)
   getFeaturedProducts: async (feature: string, type?: string) => {
     await delay(400 + Math.random() * 400);
