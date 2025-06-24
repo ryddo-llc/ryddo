@@ -57,6 +57,19 @@ const api = {
     return { data: searchResults };
   },
 
+  //get similar products
+  getRelatedProducts: async () => {
+    await delay(300 + Math.random() * 500);
+    const randomNumbers = Array.from(
+      { length: 5 },
+      () => Math.floor(Math.random() * products.length) + 1
+    );
+
+    const randomProducts: Product[] = [];
+
+    randomNumbers.map((id) => randomProducts.push(products[id - 1]));
+    return randomProducts;
+  },
   // Get featured products (bestsellers, new arrivals, on sale)
   getFeaturedProducts: async (feature: string, type?: string) => {
     await delay(400 + Math.random() * 400);

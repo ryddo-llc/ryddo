@@ -42,14 +42,14 @@ const RelatedProducts = () => {
   ];
 
   return (
-    <section className='w-full max-w-8xl mx-auto px-4 sm:px-10 lg:px-10 py-8 sm:py-14 lg:py-22 bg-[#F5F5F5]'>
+    <section className='w-full max-w-8xl mx-auto px-8 sm:px-10 lg:px-14 py-18 sm:py-18 lg:py-22 bg-[#F5F5F5]'>
       {/* Section Title */}
-      <h2 className='text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 sm:mb-8 lg:mb-10 text-gray-900'>
+      <h2 className='text-2xl sm:text-3xl lg:text-5xl font-bold mb-8 sm:mb-10 lg:mb-12 text-gray-900'>
         <span className='text-pink-500'>Related</span> Products.
       </h2>
 
       {/* Products Grid */}
-      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 sm:gap-10'>
         {products.map((product) => (
           <div
             key={product.id}
