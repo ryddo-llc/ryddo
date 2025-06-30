@@ -43,7 +43,7 @@ export default function EBikeLayout() {
         bikeImageURL={bikeImageURL}
       />
       <Addons />
-      <ProductShowcase bikeImageURL={bikeImageURL} />
+      <ProductShowcase ImageURL={bikeImageURL} />
       <PerformanceComparison bikeImagePerformance={bikeImagePerformance} />
       <ProductFeatures
         braking={bikeBraking}

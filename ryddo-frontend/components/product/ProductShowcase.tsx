@@ -3,10 +3,10 @@ import Image from 'next/image';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 interface ProductShowcaseProps {
-  bikeImageURL: string;
+  ImageURL: string;
 }
 
-const ProductShowcase = ({ bikeImageURL }: ProductShowcaseProps) => {
+const ProductShowcase = ({ ImageURL }: ProductShowcaseProps) => {
   return (
     <section className='flex items-center justify-center bg-gradient-to-br from-blue-100 via-blue-50 to-white w-full min-h-[40vh] md:min-h-[50vh] lg:min-h-[80vh] max-h-screen relative overflow-hidden'>
       {/* Additional gradient overlay for more visible separation */}
@@ -48,7 +48,7 @@ const ProductShowcase = ({ bikeImageURL }: ProductShowcaseProps) => {
         <div className='flex items-center justify-center w-full h-full'>
           <div className='relative flex items-center justify-center max-w-4xl w-full'>
             <Image
-              src={bikeImageURL}
+              src={ImageURL}
               alt='Super-73'
               width={1000}
               height={600}
