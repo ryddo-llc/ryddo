@@ -5,7 +5,7 @@ import SpecsGrid from '../SpecsGrid';
 import PriceCard from '../PriceCard';
 import OffersCard from '../OffersCard';
 
-interface BikeDetailPageProps {
+interface ScooterDetailPageProps {
   backgroundURL: string;
   productImageURL: string;
 }
@@ -13,7 +13,7 @@ interface BikeDetailPageProps {
 export default function ScooterDetailPage({
   backgroundURL,
   productImageURL,
-}: BikeDetailPageProps) {
+}: ScooterDetailPageProps) {
   return (
     <section
       aria-labelledby='product-heading'
@@ -22,7 +22,7 @@ export default function ScooterDetailPage({
       {/* Background Image */}
       <div className='absolute inset-0 w-full h-full opacity-60'>
         <Image
-          src={backgroundURL || '/default-background.jpg'}
+          src={backgroundURL}
           alt='detailpage background'
           fill
           className='object-cover'
@@ -60,7 +60,7 @@ export default function ScooterDetailPage({
               <div className='w-full max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-5xl xl:max-w-6xl mx-auto px-4'>
                 <Image
                   src={productImageURL}
-                  alt='Super-73'
+                  alt='Dualtron Thunder e-scooter'
                   width={2000}
                   height={2000}
                   priority

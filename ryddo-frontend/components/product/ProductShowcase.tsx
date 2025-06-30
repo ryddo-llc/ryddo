@@ -7,10 +7,7 @@ interface ProductShowcaseProps {
   name: string;
 }
 
-const ProductShowcase = ({
-  ImageURL,
-  name = 'Super73',
-}: ProductShowcaseProps) => {
+const ProductShowcase = ({ ImageURL, name }: ProductShowcaseProps) => {
   return (
     <section className='flex items-center justify-center bg-gradient-to-br from-blue-100 via-blue-50 to-white w-full min-h-[40vh] md:min-h-[50vh] lg:min-h-[80vh] max-h-screen relative overflow-hidden'>
       {/* Additional gradient overlay for more visible separation */}
