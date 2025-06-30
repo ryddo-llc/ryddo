@@ -2,7 +2,10 @@ import React from 'react';
 import { getCldImageUrl } from 'next-cloudinary';
 import Image from 'next/image';
 
-export default function Addons({ name = 'Super73-RX' }) {
+interface AddonProps {
+  name?: string;
+}
+export default function Addons({ name = 'Super73-RX' }: AddonProps) {
   const addOns = [
     { id: 1, name: 'waterbottle', type: 'accessories' },
     { id: 2, name: 'glove-1', type: 'gear' },

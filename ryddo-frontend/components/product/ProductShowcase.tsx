@@ -3,10 +3,11 @@ import Image from 'next/image';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 interface ProductShowcaseProps {
-  bikeImageURL: string;
+  ImageURL: string | null;
+  name: string;
 }
 
-const ProductShowcase = ({ bikeImageURL }: ProductShowcaseProps) => {
+const ProductShowcase = ({ ImageURL, name }: ProductShowcaseProps) => {
   return (
     <section className='flex items-center justify-center bg-gradient-to-br from-blue-100 via-blue-50 to-white w-full min-h-[40vh] md:min-h-[50vh] lg:min-h-[80vh] max-h-screen relative overflow-hidden'>
       {/* Additional gradient overlay for more visible separation */}
@@ -19,8 +20,8 @@ const ProductShowcase = ({ bikeImageURL }: ProductShowcaseProps) => {
 
       {/* Background Super73 Text */}
       <div className='absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden'>
-        <span className='text-gray-300 uppercase leading-loose tracking-widest font-black text-6xl md:text-8xl lg:text-9xl xl:text-[12rem] whitespace-nowrap select-none opacity-30'>
-          Super73
+        <span className='text-gray-300 uppercase leading-loose tracking-widest font-black text-6xl md:text-8xl lg:text-9xl xl:text-[12rem] whitespace-nowrap select-none opacity-30 text-wrap'>
+          {name}
         </span>
       </div>
 
@@ -48,7 +49,7 @@ const ProductShowcase = ({ bikeImageURL }: ProductShowcaseProps) => {
         <div className='flex items-center justify-center w-full h-full'>
           <div className='relative flex items-center justify-center max-w-4xl w-full'>
             <Image
-              src={bikeImageURL}
+              src={ImageURL || '/placeholder.png'}
               alt='Super-73'
               width={1000}
               height={600}

@@ -1,28 +1,28 @@
 import React from 'react';
 import Image from 'next/image';
-import { getCldImageUrl } from 'next-cloudinary';
+
 import SpecsGrid from '../SpecsGrid';
 import PriceCard from '../PriceCard';
 import OffersCard from '../OffersCard';
 
-export default function BikeDetailPage() {
-  const backgroundUrl = getCldImageUrl({
-    src: 'detailpage',
-  });
+interface ScooterDetailPageProps {
+  backgroundURL: string;
+  productImageURL: string;
+}
 
-  const bikeImage = getCldImageUrl({
-    src: 'super-73-detailpage-image',
-  });
-
+export default function ScooterDetailPage({
+  backgroundURL,
+  productImageURL,
+}: ScooterDetailPageProps) {
   return (
     <section
       aria-labelledby='product-heading'
       className='w-full min-h-[40vh] md:min-h-[50vh] lg:min-h-[80vh] max-h-screen relative overflow-hidden'
     >
       {/* Background Image */}
-      <div className='absolute inset-0 w-full h-full opacity-40'>
+      <div className='absolute inset-0 w-full h-full opacity-60'>
         <Image
-          src={backgroundUrl}
+          src={backgroundURL}
           alt='detailpage background'
           fill
           className='object-cover'
@@ -46,10 +46,10 @@ export default function BikeDetailPage() {
               id='product-heading'
               className='text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-zinc-800 leading-tight font-["Nunito"]'
             >
-              Super73-RX<span className='text-[#F92F7B]'>.</span>
+              Dualtron Thunder<span className='text-[#F92F7B]'>.</span>
             </h1>
             <p className='self-stretch text-center justify-center text-neutral-500 text-3xl font-medium font-["Nunito"] leading-loose'>
-              Performance Adventurer
+              Unmatched Performance
             </p>
           </div>
 
@@ -57,12 +57,12 @@ export default function BikeDetailPage() {
           <div className='flex-1 flex items-center justify-center min-h-0 overflow-hidden mb-8 relative'>
             {/* Centered Bike Image */}
             <div className='flex items-center justify-center'>
-              <div className='w-full max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-3xl xl:max-w-4xl mx-auto px-4'>
+              <div className='w-full max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-5xl xl:max-w-6xl mx-auto px-4'>
                 <Image
-                  src={bikeImage}
-                  alt='Super-73'
-                  width={1000}
-                  height={1000}
+                  src={productImageURL}
+                  alt='Dualtron Thunder e-scooter'
+                  width={2000}
+                  height={2000}
                   priority
                   className='w-full h-auto object-contain max-h-full'
                 />

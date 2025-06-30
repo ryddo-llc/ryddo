@@ -1,9 +1,9 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
-import ScooterDetailPage from '../../../../components/product/e-scooter/ScooterDetailPage';
 import AccessoriesDetailPage from '../../../../components/product/accessories/AccessoriesDetailPage';
 import mockAPI from '../../../../lib/api/mockAPI';
 import EBikeLayout from '../../../../components/product/e-bikes/EBikeLayout';
+import EScooterLayout from '../../../../components/product/e-scooter/EScooterLayout';
 
 export default async function page({
   params,
@@ -32,7 +32,7 @@ export default async function page({
         case 'e-bikes':
           return <EBikeLayout />;
         case 'e-scooters':
-          return <ScooterDetailPage />;
+          return <EScooterLayout />;
         case 'accessories':
           return <AccessoriesDetailPage />;
         default:
