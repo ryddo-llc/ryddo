@@ -24,6 +24,18 @@ export default function EScooterLayout() {
   const performanceComparisonImageURL = getCldImageUrl({
     src: 'thunder-front-performance',
   });
+
+  const bikeBraking = getCldImageUrl({
+    src: 'powerful-breaking',
+  });
+
+  const bikeSuspension = getCldImageUrl({
+    src: 'headlight-taillight',
+  });
+  const bikeHeadlight = getCldImageUrl({
+    src: 'adjustable-suspension',
+  });
+
   return (
     <>
       <ScooterDetailPage
@@ -35,7 +47,11 @@ export default function EScooterLayout() {
       <PerformanceComparison
         bikeImagePerformance={performanceComparisonImageURL}
       />
-      <ProductFeatures />
+      <ProductFeatures
+        braking={bikeBraking}
+        suspension={bikeSuspension}
+        headlight={bikeHeadlight}
+      />
       <TechSpecs powerSpecs={bikePowerSpecs} />
       <RelatedProducts />
     </>
