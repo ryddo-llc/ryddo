@@ -16,6 +16,14 @@ export default function EScooterLayout() {
   const productImageURL = getCldImageUrl({
     src: 'dualtron-thunder-product',
   });
+
+  const productShowcaseImageURL = getCldImageUrl({
+    src: 'dualtron-thunder-product-showcase',
+  });
+
+  const performanceComparisonImageURL = getCldImageUrl({
+    src: 'thunder-front-performance',
+  });
   return (
     <>
       <ScooterDetailPage
@@ -23,8 +31,10 @@ export default function EScooterLayout() {
         productImageURL={productImageURL}
       />
       <Addons name='E-Scooter' />
-      <ProductShowcase />
-      <PerformanceComparison />
+      <ProductShowcase name={'Thunder'} ImageURL={productShowcaseImageURL} />
+      <PerformanceComparison
+        bikeImagePerformance={performanceComparisonImageURL}
+      />
       <ProductFeatures />
       <TechSpecs powerSpecs={bikePowerSpecs} />
       <RelatedProducts />

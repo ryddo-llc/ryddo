@@ -16,8 +16,8 @@ export default function PerformanceComparison({
         <Image
           src={bikeImagePerformance}
           alt='Super-73'
-          width={1100}
-          height={2000}
+          width={1000}
+          height={1000}
           priority
           className='object-cover'
         />
