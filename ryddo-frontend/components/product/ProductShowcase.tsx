@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 interface ProductShowcaseProps {
-  ImageURL: string;
+  ImageURL: string | null;
 }
 
 const ProductShowcase = ({ ImageURL }: ProductShowcaseProps) => {
@@ -48,7 +48,7 @@ const ProductShowcase = ({ ImageURL }: ProductShowcaseProps) => {
         <div className='flex items-center justify-center w-full h-full'>
           <div className='relative flex items-center justify-center max-w-4xl w-full'>
             <Image
-              src={ImageURL}
+              src={ImageURL || '/placeholder.png'}
               alt='Super-73'
               width={1000}
               height={600}

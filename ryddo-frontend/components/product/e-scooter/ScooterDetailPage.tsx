@@ -1,28 +1,28 @@
 import React from 'react';
 import Image from 'next/image';
-import { getCldImageUrl } from 'next-cloudinary';
+
 import SpecsGrid from '../SpecsGrid';
 import PriceCard from '../PriceCard';
 import OffersCard from '../OffersCard';
 
-export default function ScooterDetailPage() {
-  const backgroundUrl = getCldImageUrl({
-    src: 'detailpage',
-  });
+interface BikeDetailPageProps {
+  backgroundURL: string;
+  productImageURL: string;
+}
 
-  const bikeImage = getCldImageUrl({
-    src: 'super-73-detailpage-image',
-  });
-
+export default function ScooterDetailPage({
+  backgroundURL,
+  productImageURL,
+}: BikeDetailPageProps) {
   return (
     <section
       aria-labelledby='product-heading'
       className='w-full min-h-[40vh] md:min-h-[50vh] lg:min-h-[80vh] max-h-screen relative overflow-hidden'
     >
       {/* Background Image */}
-      <div className='absolute inset-0 w-full h-full opacity-40'>
+      <div className='absolute inset-0 w-full h-full opacity-60'>
         <Image
-          src={backgroundUrl}
+          src={backgroundURL || '/default-background.jpg'}
           alt='detailpage background'
           fill
           className='object-cover'
@@ -36,14 +36,9 @@ export default function ScooterDetailPage() {
           {/* Top Section - Product Name & Stock */}
           <div className='text-center mb-4 md:mb-8'>
             {/* Stock Status */}
-            <div className='flex justify-center items-center gap-4 mb-4'>
-              <div className='inline-flex items-center bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium'>
-                <div className='w-2 h-2 bg-green-500 rounded-full mr-2'></div>
-                In Stock
-              </div>
-              <div className='inline-flex items-center bg-white border border-gray-300 px-3 py-1 rounded-full text-sm font-medium text-gray-700'>
-                Sale Price
-              </div>
+            <div className='inline-flex items-center bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-4'>
+              <div className='w-2 h-2 bg-green-500 rounded-full mr-2'></div>
+              In Stock
             </div>
 
             {/* Product Title */}
@@ -58,53 +53,36 @@ export default function ScooterDetailPage() {
             </p>
           </div>
 
-          {/* Middle Section - Bike Image Centered with Side Cards */}
+          {/* Middle Section - Bike Image Centered with Price Card on Right */}
           <div className='flex-1 flex items-center justify-center min-h-0 overflow-hidden mb-8 relative'>
             {/* Centered Bike Image */}
             <div className='flex items-center justify-center'>
-              <div className='w-full max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-3xl xl:max-w-4xl mx-auto px-4'>
+              <div className='w-full max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-5xl xl:max-w-6xl mx-auto px-4'>
                 <Image
-                  src={bikeImage}
-                  alt='Dualtron Thunder'
-                  width={1000}
-                  height={1000}
+                  src={productImageURL}
+                  alt='Super-73'
+                  width={2000}
+                  height={2000}
                   priority
                   className='w-full h-auto object-contain max-h-full'
                 />
               </div>
             </div>
 
-            {/* Left side - OffersCard with SpecsGrid below */}
-            <div className='hidden lg:block absolute left-0 top-0 space-y-6'>
+            {/* Left side - OffersCard */}
+            <div className='hidden lg:block absolute left-0 top-0'>
               <OffersCard />
-              <SpecsGrid
-                range='80+ mi.'
-                speed='50 mph'
-                brakes='4 Piston'
-                power='5,400W'
-                weight='95 lbs.'
-                tires="11'x4'"
-              />
             </div>
 
-            {/* Right side - PriceCard (already includes battery options) */}
+            {/* Right side - PriceCard */}
             <div className='hidden lg:block absolute right-0 top-0'>
               <PriceCard />
             </div>
           </div>
 
-          {/* Mobile Layout - Cards and Specs below image */}
-          <div className='lg:hidden space-y-6 mt-8'>
-            <OffersCard />
-            <PriceCard />
-            <SpecsGrid
-              range='80+ mi.'
-              speed='50 mph'
-              brakes='4 Piston'
-              power='5,400W'
-              weight='95 lbs.'
-              tires="11'x4'"
-            />
+          {/* Bottom Section - Specs Grid */}
+          <div className='mt-auto'>
+            <SpecsGrid />
           </div>
         </div>
       </div>
