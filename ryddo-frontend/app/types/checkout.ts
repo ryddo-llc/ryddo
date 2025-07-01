@@ -1,5 +1,7 @@
+// types/checkout.ts
 import { UseFormRegister, FieldErrors, UseFormWatch } from 'react-hook-form';
 
+// We'll define this here to avoid circular imports
 export interface CheckoutFormData {
   email: string;
   newsOffers?: boolean;
@@ -23,6 +25,18 @@ export interface FormProps {
   register: UseFormRegister<CheckoutFormData>;
   errors: FieldErrors<CheckoutFormData>;
   watch?: UseFormWatch<CheckoutFormData>;
+}
+
+// Specific interface for PaymentForm that requires watch
+export interface PaymentFormProps {
+  register: UseFormRegister<CheckoutFormData>;
+  errors: FieldErrors<CheckoutFormData>;
+  watch: UseFormWatch<CheckoutFormData>;
+}
+
+// Specific interface for OrderSummary that only needs register
+export interface OrderSummaryProps {
+  register: UseFormRegister<CheckoutFormData>;
 }
 
 export interface OrderItemProps {
