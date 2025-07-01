@@ -9,14 +9,30 @@ export const FormInput = ({
   name,
   error,
   className = '',
+  autoComplete,
+  inputMode,
+  pattern,
+  title,
+  maxLength,
   ...props
-}: FormInputProps) => (
+}: FormInputProps & {
+  autoComplete?: string;
+  inputMode?: 'text' | 'numeric' | 'tel' | 'email';
+  pattern?: string;
+  title?: string;
+  maxLength?: number;
+}) => (
   <div>
     <input
       type={type}
       placeholder={placeholder}
       {...register(name)}
-      className={`w-full px-3 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+      autoComplete={autoComplete}
+      inputMode={inputMode}
+      pattern={pattern}
+      title={title}
+      maxLength={maxLength}
+      className={`w-full px-3 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
         error ? 'border-red-500' : 'border-gray-300'
       } ${className}`}
       {...props}

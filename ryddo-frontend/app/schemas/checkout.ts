@@ -13,7 +13,15 @@ export const checkoutSchema = z
     address: z.string().min(1, 'Address is required'),
     apartment: z.string().optional(),
     city: z.string().min(1, 'City is required'),
-    province: z.string().min(1, 'Province is required'),
+    state: z.string().min(1, 'State/Province is required'),
+    zipCode: z
+      .string()
+      .min(1, 'ZIP code is required')
+      .regex(
+        /^\d{5}(-\d{4})?$/,
+        'Please enter a valid ZIP code (12345 or 12345-6789)'
+      ),
+    phone: z.string().optional(),
 
     // Payment
     paymentMethod: z.enum(['credit', 'paypal']),
@@ -23,12 +31,11 @@ export const checkoutSchema = z
     nameOnCard: z.string().optional(),
     useShippingAddress: z.boolean().optional(),
 
-    // Order
+    // Promo
     discountCode: z.string().optional(),
   })
   .refine(
     (data) => {
-      // If credit card is selected, require card fields
       if (data.paymentMethod === 'credit') {
         return (
           data.cardNumber &&
@@ -40,10 +47,24 @@ export const checkoutSchema = z
       return true;
     },
     {
-      message: 'Credit card information is required when paying by card',
+      message: 'Credit card information is required',
       path: ['cardNumber'],
+    }
+  )
+  .refine(
+    (data) => {
+      // ZIP code validation based on country
+      if (data.country === 'United States') {
+        return /^\d{5}(-\d{4})?$/.test(data.zipCode || '');
+      } else if (data.country === 'Canada') {
+        return /^[A-Z]\d[A-Z] \d[A-Z]\d$/.test(data.zipCode || '');
+      }
+      return true;
+    },
+    {
+      message: 'Please enter a valid ZIP/Postal code',
+      path: ['zipCode'],
     }
   );
 
-// Export the inferred type for use in components
 export type CheckoutFormData = z.infer<typeof checkoutSchema>;

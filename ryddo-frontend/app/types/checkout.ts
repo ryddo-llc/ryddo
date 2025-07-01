@@ -11,7 +11,9 @@ export interface CheckoutFormData {
   address: string;
   apartment?: string;
   city: string;
-  province: string;
+  state: string;
+  zipCode: string;
+  phone?: string;
   paymentMethod: 'credit' | 'paypal';
   cardNumber?: string;
   expirationDate?: string;

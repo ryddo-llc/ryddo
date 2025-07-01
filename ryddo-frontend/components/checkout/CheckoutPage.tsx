@@ -23,8 +23,8 @@ export default function CheckoutPage() {
   } = useForm<CheckoutFormData>({
     resolver: zodResolver(checkoutSchema),
     defaultValues: {
-      country: 'Canada',
-      province: 'Ontario',
+      country: 'United States',
+      state: 'CA',
       paymentMethod: 'credit',
       useShippingAddress: true,
       newsOffers: false,
@@ -56,7 +56,7 @@ export default function CheckoutPage() {
     <div className='min-h-screen'>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className='grid grid-cols-1 lg:grid-cols-2 min-h-screen'>
-          {/* Left Column - Checkout Form (White Background) */}
+          {/* Left Column - Checkout Form  */}
           <div className='bg-white p-6 lg:p-12 order-2 lg:order-1'>
             <div className='max-w-lg mx-auto'>
               <ExpressCheckout />
@@ -69,7 +69,7 @@ export default function CheckoutPage() {
               <button
                 type='submit'
                 disabled={isSubmitting}
-                className='w-full bg-[#E91E63] text-white py-4 px-6 rounded-md font-medium text-lg hover:bg-[#D81B60] transition-colors mb-6 disabled:opacity-50 disabled:cursor-not-allowed'
+                className='w-full bg-[#F92F7B] text-white py-4 px-6 rounded-md font-medium text-lg hover:bg-[#D81B60] transition-colors mb-6 disabled:opacity-50 disabled:cursor-not-allowed'
               >
                 {isSubmitting ? 'Processing...' : 'Pay now'}
               </button>
