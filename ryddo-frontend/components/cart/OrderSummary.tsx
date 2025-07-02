@@ -21,12 +21,15 @@ export const OrderSummary = ({ register }: OrderSummaryProps) => {
     },
   ];
 
+  const subtotal = orderItems.reduce((sum, item) => {
+    return sum + parseFloat(item.price.replace(',', '')) * item.quantity;
+  }, 0);
   return (
     <div className='h-full p-6 lg:p-8'>
       {/* Order Items */}
       <div className='space-y-4 mb-6'>
-        {orderItems.map((item, index) => (
-          <OrderItem key={index} {...item} />
+        {orderItems.map((item) => (
+          <OrderItem key={`${item.name}-${item.description}`} {...item} />
         ))}
       </div>
 
@@ -34,6 +37,8 @@ export const OrderSummary = ({ register }: OrderSummaryProps) => {
       <div className='mb-6'>
         <div className='flex space-x-2'>
           <input
+            aria-label='Discount code'
+            aria-describedby='discount-error'
             type='text'
             placeholder='Discount code'
             {...register('discountCode')}
@@ -52,7 +57,9 @@ export const OrderSummary = ({ register }: OrderSummaryProps) => {
       <div className='space-y-3 mb-6'>
         <div className='flex justify-between text-sm'>
           <span className='text-gray-600'>Subtotal</span>
-          <span className='font-medium text-gray-900'>$3,875.00</span>
+          <span className='font-medium text-gray-900'>
+            ${subtotal.toLocaleString('en-US', { minimumFractionDigits: 2 })}
+          </span>
         </div>
         <div className='flex justify-between text-sm'>
           <span className='text-gray-600'>Shipping</span>

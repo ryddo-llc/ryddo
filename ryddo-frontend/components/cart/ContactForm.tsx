@@ -8,7 +8,7 @@ export const ContactForm = ({ register, errors }: FormProps) => (
     <div className='space-y-4'>
       <FormInput
         type='email'
-        placeholder='Email or phone number'
+        placeholder='Email'
         register={register}
         name='email'
         error={errors.email?.message}
