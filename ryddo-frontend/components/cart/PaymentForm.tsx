@@ -13,10 +13,15 @@ export const PaymentForm = ({ register, watch, errors }: PaymentFormProps) => {
         All transactions are secure and encrypted
       </p>
 
-      <div className='space-y-4'>
+      <fieldset className='space-y-4'>
+        <legend className='sr-only'>Payment method selection</legend>
         {/* Credit Card Option */}
         <div className='border border-gray-300 rounded-md'>
-          <label className='flex items-center p-4 cursor-pointer'>
+          <label
+            htmlFor='payment-credit'
+            className='flex items-center p-4 cursor-pointer'
+            id='payment-credit'
+          >
             <input
               type='radio'
               value='credit'
@@ -46,7 +51,11 @@ export const PaymentForm = ({ register, watch, errors }: PaymentFormProps) => {
 
         {/* PayPal Option */}
         <div className='border border-gray-300 rounded-md'>
-          <label className='flex items-center p-4 cursor-pointer'>
+          <label
+            htmlFor='payment-paypal'
+            className='flex items-center p-4 cursor-pointer'
+            id='payment-paypal'
+          >
             <input
               type='radio'
               value='paypal'
@@ -61,8 +70,11 @@ export const PaymentForm = ({ register, watch, errors }: PaymentFormProps) => {
             </div>
           </label>
         </div>
-      </div>
-      <ErrorMessage message={errors.paymentMethod?.message} id={`$-error`} />
+      </fieldset>
+      <ErrorMessage
+        message={errors.paymentMethod?.message}
+        id={`paymentMethod-error`}
+      />
     </div>
-  )
+  );
 };

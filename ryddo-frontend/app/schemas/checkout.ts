@@ -14,13 +14,7 @@ export const checkoutSchema = z
     apartment: z.string().optional(),
     city: z.string().min(1, 'City is required'),
     state: z.string().min(1, 'State/Province is required'),
-    zipCode: z
-      .string()
-      .min(1, 'ZIP code is required')
-      .regex(
-        /^\d{5}(-\d{4})?$/,
-        'Please enter a valid ZIP code (12345 or 12345-6789)'
-      ),
+    zipCode: z.string().min(1, 'ZIP code is required'),
     phone: z.string().optional(),
 
     // Payment

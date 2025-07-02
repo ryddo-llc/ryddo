@@ -15,15 +15,7 @@ export const FormInput = ({
   title,
   maxLength,
   ...props
-}: FormInputProps & {
-  autoComplete?: string;
-  inputMode?: 'text' | 'numeric' | 'tel' | 'email';
-  pattern?: string;
-  title?: string;
-  maxLength?: number;
-}
-) => (
-  
+}: FormInputProps) => (
   <div>
     <input
       type={type}

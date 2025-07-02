@@ -8,7 +8,7 @@ export const OrderSummary = ({ register }: OrderSummaryProps) => {
     {
       name: 'Super73-RX',
       description: 'E-bike',
-      price: '3,695.00',
+      price: '3695.00',
       quantity: 1,
       image: '🚲',
     },
@@ -22,7 +22,7 @@ export const OrderSummary = ({ register }: OrderSummaryProps) => {
   ];
 
   const subtotal = orderItems.reduce((sum, item) => {
-    return sum + parseFloat(item.price.replace(',', '')) * item.quantity;
+    return sum + parseFloat(item.price) * item.quantity;
   }, 0);
   return (
     <div className='h-full p-6 lg:p-8'>
@@ -91,7 +91,12 @@ export const OrderSummary = ({ register }: OrderSummaryProps) => {
         <div className='flex justify-between items-center'>
           <span className='text-xl font-semibold text-gray-900'>Total</span>
           <div className='text-right'>
-            <div className='text-2xl font-bold text-gray-900'>$3,880.00</div>
+            <div className='text-2xl font-bold text-gray-900'>
+              $
+              {(subtotal + 5).toLocaleString('en-US', {
+                minimumFractionDigits: 2,
+              })}{' '}
+            </div>
             <div className='text-sm text-gray-600'>
               Including $5.00 in taxes
             </div>
