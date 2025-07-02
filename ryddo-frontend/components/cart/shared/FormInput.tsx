@@ -21,7 +21,9 @@ export const FormInput = ({
   pattern?: string;
   title?: string;
   maxLength?: number;
-}) => (
+}
+) => (
+  
   <div>
     <input
       type={type}

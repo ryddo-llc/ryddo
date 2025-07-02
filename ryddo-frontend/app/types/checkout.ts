@@ -57,6 +57,11 @@ export interface FormInputProps
   name: keyof CheckoutFormData;
   error?: string;
   className?: string;
+  autoComplete?: string;
+  inputMode?: 'text' | 'numeric' | 'tel' | 'email';
+  pattern?: string;
+  title?: string;
+  maxLength?: number;
 }
 
 export interface FormSelectProps

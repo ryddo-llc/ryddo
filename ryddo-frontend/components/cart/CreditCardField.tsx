@@ -12,6 +12,10 @@ export const CreditCardFields = ({ register, errors }: FormProps) => (
         name='cardNumber'
         error={errors.cardNumber?.message}
         className='pr-10'
+        inputMode='numeric'
+        pattern='[0-9\s]{13,19}'
+        maxLength={19}
+        autoComplete='cc-number'
       />
       <div className='absolute inset-y-0 right-0 pr-3 flex items-center'>
         <svg
@@ -44,6 +48,10 @@ export const CreditCardFields = ({ register, errors }: FormProps) => (
           name='securityCode'
           error={errors.securityCode?.message}
           className='pr-10'
+          inputMode='numeric'
+          pattern='[0-9]{3,4}'
+          maxLength={4}
+          autoComplete='cc-csc'
         />
         <div className='absolute inset-y-0 right-0 pr-3 flex items-center'>
           <svg
@@ -68,15 +76,20 @@ export const CreditCardFields = ({ register, errors }: FormProps) => (
       register={register}
       name='nameOnCard'
       error={errors.nameOnCard?.message}
+      autoComplete='cc-name'
     />
 
-    <label className='flex items-center'>
+    <label className='flex items-center cursor-pointer'>
       <input
         type='checkbox'
         {...register('useShippingAddress')}
-        className='h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded'
+        className='h-4 w-4 text-blue-600 focus:ring-blue-500 focus:ring-offset-2 border-gray-300 rounded'
+        aria-describedby='billing-address-description'
       />
-      <span className='ml-2 text-sm text-gray-700'>
+      <span
+        id='billing-address-description'
+        className='ml-2 text-sm text-gray-700'
+      >
         Use shipping address as billing address
       </span>
     </label>
