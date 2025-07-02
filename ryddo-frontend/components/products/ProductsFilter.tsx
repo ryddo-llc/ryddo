@@ -76,7 +76,7 @@ export default function ProductsFilter() {
         <div className='space-y-2'>
           {[
             'Up to $1,499 (5)',
-            '$500-$1,999 (7)',
+            '$1,500-$1,999 (7)',
             '$2,000-$4,999 (12)',
             '$5,000 and above (3)',
           ].map((price) => (
