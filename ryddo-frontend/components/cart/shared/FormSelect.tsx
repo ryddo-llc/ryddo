@@ -18,6 +18,8 @@ export const FormSelect = ({
     )}
     <select
       {...register(name)}
+      aria-describedby={error ? `${name}-error` : undefined}
+      aria-invalid={!!error}
       className={`w-full px-3 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white ${
         error ? 'border-red-500' : 'border-gray-300'
       }`}
@@ -25,6 +27,6 @@ export const FormSelect = ({
     >
       {children}
     </select>
-    <ErrorMessage message={error} />
+    <ErrorMessage message={error} id={`${name}-error`} />
   </div>
 );
