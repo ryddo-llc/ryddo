@@ -62,7 +62,7 @@ export const PaymentForm = ({ register, watch, errors }: PaymentFormProps) => {
           </label>
         </div>
       </div>
-      <ErrorMessage message={errors.paymentMethod?.message} />
+      <ErrorMessage message={errors.paymentMethod?.message} id={`$-error`} />
     </div>
-  );
+  )
 };

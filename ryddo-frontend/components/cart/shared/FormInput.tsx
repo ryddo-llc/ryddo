@@ -37,6 +37,6 @@ export const FormInput = ({
       } ${className}`}
       {...props}
     />
-    <ErrorMessage message={error} />
+    <ErrorMessage message={error} id={`${name}-error`} />
   </div>
 );
