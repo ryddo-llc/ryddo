@@ -90,7 +90,7 @@ export default function CheckoutPage() {
           </div>
 
           {/* Right Column - Order Summary (Gray Background) */}
-          <div className='bg-gray-50 order-1 lg:order-2'>
+          <div className='bg-gray-50 order-1 lg:order-2 p-14'>
             <OrderSummary register={register} />
           </div>
         </div>
