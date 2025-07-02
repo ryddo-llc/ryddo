@@ -2,6 +2,7 @@ import React from 'react';
 import { ErrorMessage } from './ErrorMessage';
 import { FormSelectProps } from '../../../app/types/checkout';
 
+const selectId = `select-${name}`;
 export const FormSelect = ({
   label,
   register,
@@ -12,11 +13,15 @@ export const FormSelect = ({
 }: FormSelectProps) => (
   <div>
     {label && (
-      <label className='block text-sm font-medium text-gray-700 mb-1'>
+      <label
+        htmlFor={selectId}
+        className='block text-sm font-medium text-gray-700 mb-1'
+      >
         {label}
       </label>
     )}
     <select
+      id={selectId}
       {...register(name)}
       aria-describedby={error ? `${name}-error` : undefined}
       aria-invalid={!!error}
