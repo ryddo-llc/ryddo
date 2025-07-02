@@ -10,7 +10,9 @@ export default function NavIcons() {
       <Link href='/account'>
         <FiUser />
       </Link>
-      <Link href='/cart'>
+      <Link
+        href='/cart'
+      >
         <LuShoppingCart />
       </Link>
     </div>
