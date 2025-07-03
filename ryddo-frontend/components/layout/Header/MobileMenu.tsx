@@ -11,12 +11,12 @@ import { PiScooterBold } from 'react-icons/pi';
 import Link from 'next/link';
 
 const navLinks = [
-  { name: 'Home', path: '/', icon: <FiHome /> },
-  { name: 'E-bikes', path: '/products/e-bikes', icon: <FaBicycle /> },
-  { name: 'E-scooters', path: '/products/e-scooters', icon: <PiScooterBold /> },
-  { name: 'Gear', path: '/products/gear', icon: <BsBackpack2 /> },
-  { name: 'Accessories', path: '/products/accessories', icon: <IoBagAddOutline /> },
-  { name: 'Service', path: '/products/service', icon: <HiOutlineWrenchScrewdriver /> },
+  { name: 'home', path: '/', icon: <FiHome /> },
+  { name: 'e-bikes', path: '/products/e-bikes', icon: <FaBicycle /> },
+  { name: 'e-scooters', path: '/products/e-scooters', icon: <PiScooterBold /> },
+  { name: 'gear', path: '/products/gear', icon: <BsBackpack2 /> },
+  { name: 'accessories', path: '/products/accessories', icon: <IoBagAddOutline /> },
+  { name: 'service', path: '/products/service', icon: <HiOutlineWrenchScrewdriver /> },
 ];
 
 export default function MobileMenu() {
