@@ -12,7 +12,10 @@ export default function Footer() {
       role='contentinfo'
       aria-label='Site Footer'
     >
-      <nav className='max-w-7xl mx-auto px-6 py-8 border-b border-gray-300'>
+      <nav 
+        className='max-w-7xl mx-auto px-6 py-8 border-b border-gray-300'
+        aria-label='Footer navigation'
+      >
         <div className="grid grid-cols-1 md:grid-cols-4 gap-y-8 md:gap-x-20 pb-12">
           <InfoSection />
           <ShopLinks />

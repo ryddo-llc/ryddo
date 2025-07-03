@@ -17,8 +17,8 @@ export default function InfoSection() {
       </p>
 
       <div>
-        <Link href='/learn-more' className='text-pink-500 font-bold block my-3 flex items-center justify-center md:justify-start gap-1'>
-          <FiArrowRight className='inline-block' /> Learn More
+        <Link href='/learn-more' className='text-pink-500 font-bold my-3 flex items-center justify-center md:justify-start gap-1'>
+          Learn More <FiArrowRight />
         </Link>
       </div>
 
