@@ -22,7 +22,7 @@ export default function ContactSection() {
     },
   ];
   return (
-    <>
+    <div className="text-center md:text-left">
       <section className='w-full' aria-labelledby='contact-heading'>
         <h2 id='contact-heading' className='text-sm font-semibold mb-4'>
           Contact Us
@@ -30,7 +30,7 @@ export default function ContactSection() {
 
         <div className='space-y-3'>
           {/* Phone */}
-          <div className='flex items-center gap-2'>
+          <div className='flex items-center justify-center md:justify-start gap-2 w-full'>
             <FaPhone className='text-[#333333]' aria-hidden='true' />
             <Link
               href='tel:+13236767433'
@@ -42,7 +42,7 @@ export default function ContactSection() {
           </div>
 
           {/* Email */}
-          <div className='flex items-center gap-2'>
+          <div className='flex items-center justify-center md:justify-start gap-2 w-full'>
             <FaEnvelope className='text-[#333333]' aria-hidden='true' />
             <Link
               href='mailto:info@ryddo.com'
@@ -54,7 +54,7 @@ export default function ContactSection() {
           </div>
 
           {/* Address */}
-          <div className='flex items-start gap-2'>
+          <div className='flex items-start justify-center md:justify-start gap-2 w-full'>
             <FaMapMarkerAlt
               className='text-[#333333] mt-1'
               aria-hidden='true'
@@ -75,7 +75,7 @@ export default function ContactSection() {
           </div>
 
           {/* Social Media */}
-          <div className='flex gap-4 pt-2 mt-2' aria-label='Social Media Links'>
+          <div className='flex justify-center md:justify-start gap-4 pt-2 mt-2' aria-label='Social Media Links'>
             <Link
               href='https://instagram.com/ryddo'
               aria-label='Follow Ryddo on Instagram'
@@ -99,6 +99,6 @@ export default function ContactSection() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

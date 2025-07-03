@@ -24,9 +24,9 @@ export default function ExploreLinks() {
     },
   ];
   return (
-    <div>
+    <div className="text-center md:text-left">
       <h3 className='text-sm font-semibold mb-4'>Explore</h3>
-      <div className='flex flex-col space-y-3'>
+      <div className='flex flex-col items-center md:items-start space-y-3'>
         {exploreLinks.map((exploreLink: ExploreLinksProps) => (
           <Link
             className='text-[#333333] hover:text-[#F92F7B]'
