@@ -36,7 +36,7 @@ export default function HeaderNavigation() {
     },
   ];
   return (
-    <div className='flex gap-8'>
+    <div className='flex gap-4 lg:gap-8'>
       {navigationLinks.map((link: navigationLinksProps) => (
         <Link
           key={link.name}
