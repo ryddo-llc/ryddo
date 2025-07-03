@@ -25,7 +25,7 @@ export default function ContactSection() {
     <div className="text-center md:text-left">
       <section className='w-full' aria-labelledby='contact-heading'>
         <h2 id='contact-heading' className='text-sm font-semibold mb-4'>
-          Contact Us
+          Find Us
         </h2>
 
         <div className='space-y-3'>

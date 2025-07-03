@@ -19,7 +19,7 @@ export default function ExploreLinks() {
       link: '/account',
     },
     {
-      name: 'Contact us',
+      name: 'Contact Us',
       link: '/contact',
     },
   ];
