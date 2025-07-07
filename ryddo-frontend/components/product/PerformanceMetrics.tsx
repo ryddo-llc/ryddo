@@ -1,6 +1,19 @@
 'use client';
 import React, { useEffect, useState, useRef } from 'react';
 
+// Wheel geometry constants for offset calculation (tweak as needed)
+const wheelCenterY = 180; // px
+const wheelCenterX = 180; // px
+const wheelRadius = 150; // px
+const lineSpacing = 48; // px
+const barWidth = 360; // px
+
+function getCurveOffset(index: number, total: number, yAdjust = 0) {
+  const y = wheelCenterY - ((total - 1) / 2 - index) * lineSpacing + yAdjust;
+  const dx = Math.sqrt(Math.max(0, wheelRadius ** 2 - (y - wheelCenterY) ** 2));
+  return wheelCenterX + dx - barWidth;
+}
+
 export default function PerformanceMetrics() {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -55,7 +68,7 @@ export default function PerformanceMetrics() {
       color: 'bg-[#F92F7B]',
     },
     {
-      label: 'Breaking Power - 90%',
+      label: 'Braking Power - 90%',
       sublabel: 'Quad Piston Hydraulic',
       percentage: 90,
       color: 'bg-[#F92F7B]',
@@ -80,26 +93,31 @@ export default function PerformanceMetrics() {
     },
   ];
   return (
-    <div ref={ref} className='space-y-10'>
+    <div ref={ref} className='space-y-4'>
       {performanceMetrics.map((metric, index) => (
-        <div key={index}>
-          <div className='flex justify-between items-start p-1'>
-            <h3 className='font-bold text-gray-900 text-sm leading-tight max-w-xs'>
-              {metric.label}
-            </h3>
-          </div>
-          <p className='text-xs text-gray-500'>{metric.sublabel}</p>
-
-          {/* Progress bar container */}
+        <div key={index} style={{ marginBottom: '24px', position: 'relative' }}>
           <div
-            role='progressbar'
-            aria-valuemin={0}
-            aria-valuemax={100}
-            aria-valuenow={isVisible ? metric.percentage : 0}
-            className='w-full bg-gray-200 rounded-full h-1.5 overflow-hidden'
+            className='font-bold text-gray-900 text-lg leading-tight'
+            style={{ position: 'relative', left: getCurveOffset(index, performanceMetrics.length, -16) }}
+          >
+            {metric.label}
+          </div>
+          <div
+            className='text-base text-gray-500'
+            style={{ position: 'relative', left: getCurveOffset(index, performanceMetrics.length, 0) }}
+          >
+            {metric.sublabel}
+          </div>
+          <div
+            className="w-full bg-gray-200 rounded-full h-2 overflow-hidden mt-1"
+            style={{
+              position: 'relative',
+              left: getCurveOffset(index, performanceMetrics.length, 16),
+              width: `${barWidth}px`,
+            }}
           >
             <div
-              className={`h-1.5 ${metric.color} rounded-full transition-all duration-1000 ease-out`}
+              className={`h-2 ${metric.color} rounded-full transition-all duration-1000 ease-out`}
               style={{
                 width: isVisible ? `${metric.percentage}%` : '0%',
                 transitionDelay: `${index * 150}ms`,
