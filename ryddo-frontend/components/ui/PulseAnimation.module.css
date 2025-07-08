@@ -1,0 +1,67 @@
+@keyframes pulseNormal {
+  0% { 
+    transform: scale(1); 
+    opacity: 0.8; 
+  }
+  60% { 
+    transform: scale(1.25); 
+    opacity: 0.6; 
+  }
+  100% { 
+    transform: scale(1); 
+    opacity: 0.8; 
+  }
+}
+
+@keyframes pulseSubtle {
+  0% { 
+    transform: scale(1); 
+    opacity: 0.6; 
+  }
+  60% { 
+    transform: scale(1.1); 
+    opacity: 0.4; 
+  }
+  100% { 
+    transform: scale(1); 
+    opacity: 0.6; 
+  }
+}
+
+@keyframes pulseStrong {
+  0% { 
+    transform: scale(1); 
+    opacity: 0.9; 
+  }
+  60% { 
+    transform: scale(1.4); 
+    opacity: 0.7; 
+  }
+  100% { 
+    transform: scale(1); 
+    opacity: 0.9; 
+  }
+}
+
+.pulseNormal {
+  animation: pulseNormal 2.5s cubic-bezier(0.4,0,0.2,1) infinite;
+  transform-origin: center;
+}
+
+.pulseSubtle {
+  animation: pulseSubtle 3s cubic-bezier(0.4,0,0.2,1) infinite;
+  transform-origin: center;
+}
+
+.pulseStrong {
+  animation: pulseStrong 2s cubic-bezier(0.4,0,0.2,1) infinite;
+  transform-origin: center;
+}
+
+/* Responsive positioning */
+.pulseContainer {
+  /* Apply mobile transform on smaller screens */
+  @media (max-width: 767px) {
+    transform: var(--mobile-transform) !important;
+  }
+} 
