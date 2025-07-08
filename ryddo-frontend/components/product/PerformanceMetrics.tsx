@@ -17,8 +17,8 @@ export default function PerformanceMetrics({
     <div ref={ref} className={`space-y-4 ${className}`}>
       {metrics.map((metric, index) => (
         <div key={metric.id} className="mb-6 relative">
-          {/* Desktop: Curved positioning (md and up) */}
-          <div className="hidden md:block">
+          {/* Desktop: Curved positioning (lg and up) */}
+          <div className="hidden lg:block">
             <div
               className='font-bold text-gray-900 text-lg leading-tight'
               style={{ 
@@ -56,8 +56,8 @@ export default function PerformanceMetrics({
             </div>
           </div>
 
-          {/* Mobile: Normal vertical layout (below md) */}
-          <div className="block md:hidden">
+          {/* Mobile: Normal vertical layout (below lg) */}
+          <div className="block lg:hidden">
             <div className='font-bold text-gray-900 text-lg leading-tight'>
               {metric.label}
             </div>

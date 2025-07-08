@@ -35,6 +35,15 @@ export default function PulseAnimation({
   colors = defaultAnimationConfig.colors,
   className = '',
 }: PulseAnimationConfig) {
+  // Generate unique IDs for this component instance
+  const instanceId = React.useId();
+  const ring1Id = `ring1-gradient-${instanceId}`;
+  const ring2Id = `ring2-gradient-${instanceId}`;
+  const ring3Id = `ring3-gradient-${instanceId}`;
+  const donut1Id = `donut1-${instanceId}`;
+  const donut2Id = `donut2-${instanceId}`;
+  const donut3Id = `donut3-${instanceId}`;
+
   const getAnimationClass = () => {
     switch (pulseIntensity) {
       case 'subtle':
@@ -48,9 +57,8 @@ export default function PulseAnimation({
 
   return (
     <div
-      className={`absolute left-1/2 top-1/2 pointer-events-none ${className}`}
+      className={`pointer-events-none ${className}`}
       style={{
-        transform: 'translate(-13%, -50%)',
         width: `${size}px`,
         height: `${size}px`,
         overflow: 'visible',
@@ -63,31 +71,31 @@ export default function PulseAnimation({
         fill="none"
       >
         <defs>
-          <radialGradient id="ring1-gradient" cx="50%" cy="50%" r="50%">
+          <radialGradient id={ring1Id} cx="50%" cy="50%" r="50%">
             <stop offset="70%" stopColor={colors.middleRing} stopOpacity={GRADIENT_STOPS.INNER.start} />
             <stop offset="100%" stopColor={colors.middleRing} stopOpacity={GRADIENT_STOPS.INNER.end} />
           </radialGradient>
 
-          <radialGradient id="ring2-gradient" cx="50%" cy="50%" r="50%">
+          <radialGradient id={ring2Id} cx="50%" cy="50%" r="50%">
             <stop offset="70%" stopColor={colors.middleRing} stopOpacity={GRADIENT_STOPS.MIDDLE.start} />
             <stop offset="100%" stopColor={colors.middleRing} stopOpacity={GRADIENT_STOPS.MIDDLE.end} />
           </radialGradient>
           
-          <radialGradient id="ring3-gradient" cx="50%" cy="50%" r="50%">
+          <radialGradient id={ring3Id} cx="50%" cy="50%" r="50%">
             <stop offset="70%" stopColor={colors.outerRing} stopOpacity={GRADIENT_STOPS.OUTER.start} />
             <stop offset="100%" stopColor={colors.outerRing} stopOpacity={GRADIENT_STOPS.OUTER.end} />
           </radialGradient>
 
           {/* Masks for donut shapes */}
-          <mask id="donut1">
+          <mask id={donut1Id}>
             <rect width={size} height={size} fill="white" />
             <circle cx={size / 2} cy={size / 2} r={size * RING_DIMENSIONS.INNER_CUTOUT} fill="black" />
           </mask>
-          <mask id="donut2">
+          <mask id={donut2Id}>
             <rect width={size} height={size} fill="white" />
             <circle cx={size / 2} cy={size / 2} r={size * RING_DIMENSIONS.MIDDLE_CUTOUT} fill="black" />
           </mask>
-          <mask id="donut3">
+          <mask id={donut3Id}>
             <rect width={size} height={size} fill="white" />
             <circle cx={size / 2} cy={size / 2} r={size * RING_DIMENSIONS.OUTER_CUTOUT} fill="black" />
           </mask>
@@ -106,8 +114,8 @@ export default function PulseAnimation({
           cx={size / 2}
           cy={size / 2}
           r={size * RING_DIMENSIONS.INNER_RING_RADIUS}
-          fill="url(#ring1-gradient)"
-          mask="url(#donut1)"
+          fill={`url(#${ring1Id})`}
+          mask={`url(#${donut1Id})`}
           className={getAnimationClass()}
           opacity={RING_OPACITY.INNER}
         />
@@ -116,8 +124,8 @@ export default function PulseAnimation({
           cx={size / 2}
           cy={size / 2}
           r={size * RING_DIMENSIONS.MIDDLE_RING_RADIUS}
-          fill="url(#ring2-gradient)"
-          mask="url(#donut2)"
+          fill={`url(#${ring2Id})`}
+          mask={`url(#${donut2Id})`}
           className={getAnimationClass()}
           opacity={RING_OPACITY.MIDDLE}
         />
@@ -126,8 +134,8 @@ export default function PulseAnimation({
           cx={size / 2}
           cy={size / 2}
           r={size * RING_DIMENSIONS.OUTER_RING_RADIUS}
-          fill="url(#ring3-gradient)"
-          mask="url(#donut3)"
+          fill={`url(#${ring3Id})`}
+          mask={`url(#${donut3Id})`}
           className={getAnimationClass()}
           opacity={RING_OPACITY.OUTER}
         />
